@@ -1,0 +1,689 @@
+            <!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title> Sunbeam</title>
+
+                <!-- Bootstrap & Icons -->
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+                <style>
+                   
+                    /* body */
+                        body {
+                      margin: 0;
+                      font-family: Arial, sans-serif;
+                      background-color: white;
+                      padding: 0;
+                      box-sizing: border-box;
+                      width: 100%;
+                    }
+
+                  
+                  /* Topbar */
+                     .topbar {
+                        background-color: #004080;
+                        color: white;
+                        font-size: 0.9rem;
+                        padding: 5px 20px;
+                    }
+
+                     /* Header */
+                      header {
+                        background-color: white;
+                        padding: 10px 20px;
+                    }
+
+                    header img {
+                        height: 60px;
+                    }
+                    .header-right .btnn{
+                        background-color: #004080;
+                        color: white;
+                        font-weight: bold;
+                        border: 2px solid skyblue;
+                        height: 38px;
+                        padding: 0 12px;
+                        display: flex;
+                        align-items: center;
+                        white-space: nowrap;
+                    }
+
+            .social-icon {
+                font-size: 1rem;
+                width: 38px;
+                height: 38px;
+                background-color: #007bff;
+                color: white;
+                border: 1px solid white;
+                text-align: center;
+                display: inline-flex;
+                align-items: center;
+                background-color: #007bff;
+                justify-content: center;
+            }
+                   
+                    .social-icon:hover {
+                        background-color: #0056b3;
+                    }
+
+
+                     /* Navigation bar */
+                    .navbar-custom {
+                      background-color:  #004080;
+                    }
+
+                    .navbar-custom .nav-link {
+                        color: white;
+                        font-weight: bold;
+                    }
+
+                    .box {
+                        padding: 6px 15px;
+                        margin: 0 4px;
+                        background-color: #004080;
+                        color: white;
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
+
+                    .box:hover {
+                        background-color: rgb(55, 37, 255);
+                    }
+
+
+                    /* Page Heading and anchor tag */
+                    .contact {
+                        background-color: black;
+                        padding: 20px;
+                        text-align: center;
+                        color: white;
+                    }
+                    
+                   /* Main Body */
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 0px;
+                        padding: 0;
+                        background-color: white;
+                    }
+
+                    /* Main Text  */
+                    .main-container {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding: 20px;
+                    }
+
+                    .about-section {
+                        margin-top: 10px;
+                        /* flex: 2; */
+                        padding-right: 20px;
+                        padding-left: 20px;
+                    }
+                    .about-text {
+                        margin-top: 20px;
+                        font-size: 16px;
+                        color:grey;
+                        text-align: justify;
+                        margin-left: 50px;
+                    }
+
+                    .dashed-line {
+                        border-top: 2px dashed #15090965;
+                        margin-bottom: 20px;
+                    
+                    }
+                    /* Main text image */
+                    .new_images img {
+                        width: 60%; 
+                        height: auto;
+                        display: block;
+                        margin: 0 auto;
+                    }
+
+                                  /* sidebar */
+                   .sidebar {
+                         flex: 1;
+                         display: flex;
+                         flex-direction: column;
+                          gap: 20px;
+                     }
+
+                   .card {
+                          width: 300px;
+                          height: 500px;
+                          margin: 50px auto;
+                          padding: 20px;
+                          background: linear-gradient(skyblue, rgba(13, 56, 99, 0.4)) ;
+                          background-size: cover;
+                          border: 2px solid white;
+                        
+                          color: #fff;
+                          text-align: center;
+                          display: flex;
+                          flex-direction: column;
+                          justify-content: center;
+                          position: relative;
+                        }
+
+                      .center-image {
+                      width: 80px;
+                      height: 80px;
+                      margin: 0 auto 20px;
+                    }
+
+
+                        .card h2 {
+                          font-size: 22px;
+                          font-weight: bold;
+                          color: #fff8a9;
+                          margin: 10px 0;
+                        }
+
+                        .card h2 span {
+                          display: block;
+                          margin-top: 5px;
+                        }
+
+                        .btn {
+                          margin-top: 30px;
+                          background-color: white;
+                          color: #008cfc;
+                          border: none;
+                          padding: 10px 20px;
+                          border-radius: 25px;
+                          cursor: pointer;
+                          transition: 0.3s ease;
+                          text-transform: uppercase;
+                        }
+
+                        .btn:hover {
+                          background-color: #e0e0e0;
+                        }
+
+                       /* Contact-section */
+                        .contact-section {
+                        background: #0f3b5c url('bg-pattern.png'); /* replace bg-pattern.png if you want */
+                        color: white;
+                        padding: 40px 20px;
+                        margin-top: 10px;
+                    }
+
+                    .contact-container {
+                        display: flex;
+                      flex-wrap: wrap;
+                      justify-content: space-around;
+                      max-width: 1200px;
+                      margin: 0 auto;
+                    }
+
+                    .contact-box {
+                      flex: 1 1 400px;
+                      margin: 20px;
+                    }
+
+                    .cont{
+                        padding-left: 25px;
+                    }
+                    .contact-box h2 {
+                      font-size: 22px;
+                      margin-bottom: 10px;
+                    }
+
+                    .contact-box p {
+                      font-size: 16px;
+                      margin: 5px 0;
+                    
+                    }
+
+                    .contact-box .icon {
+                      margin-right: 8px;
+                    }
+
+                    .contact-info {
+                      margin-top: 15px;
+                    }
+
+                    .contact-info p {
+                      display: flex;
+                      align-items: center;
+                      color: white;
+                    
+                    }
+                                    
+                    .contact-info p i {
+                      margin-right: 5px;
+                      color: white;
+                    }  
+  
+
+                    /* accordion */
+     .accordion::after {
+                         /* border-left-color: #007bff; */
+  content: '+';
+  color: grey;
+  font-weight: bold;
+  font-size: 20px;
+
+  float: right;
+  margin-left: 5px;
+}
+
+.accordion.active::after {
+  content: '-';
+  background-color: #e9ecef;
+  /* text-decoration-color: #007bff ; */
+}
+
+                    /* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+
+  color: #444;
+  cursor: pointer;
+  
+  padding: 18px;
+  width: 100%;
+  /* text-align: left; */
+  /* outline: black; */
+ max-width: 830px;
+
+    /* border-left-color: 10x solid #007bff; */
+  background-color: #fff;
+
+ margin: auto;
+  width: 100%;
+  border: 1px solid #ccc;
+  transition: 0.4s;
+  padding-bottom: 10px;
+    font-family: Arial, sans-serif;
+      justify-content: space-between;
+       /* margin-top: 10px; */
+                        /* padding-right: 20px; */
+                        padding-left: 20px;
+
+                         margin-top: 5px;
+                        font-size: 16px;
+                      
+                        text-align: justify;
+                        margin-left: 50px;
+                    
+}
+
+.panel {
+   /* padding-left: 20px; */
+   padding: 10px;
+   /* padding-right: 10px; */
+  background-color: white;
+  text-align: justify;
+  display: none;
+ color: #444;
+  overflow: hidden;
+     border: 1px solid #ccc;
+       border: 1px solid #ccc;
+       border: 1px solid #ccc;
+       /* margin-top:; */
+       margin-left: 50px;
+       /* max-width: 90%; */
+       width: 94%;
+       margin-right: 100px;
+        /* max-width: 830px; */
+          /* max-width: 1000px; */
+      
+       
+}
+
+ .image-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+.image-row img {
+      width: 250px;
+      height: auto;
+      /* border-radius: 5px; */
+    }
+
+    
+    .panel img {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 100%;
+      height: auto;
+    }
+    /* .p_trans{
+      align-items: center;
+    } */
+     
+  .PPP {
+    display: flex;
+      /* gap: 20px; */
+      /* flex-wrap: wrap; */
+      /* margin-bottom: 20px; */
+      width: 250px;
+      padding-top: 10px;
+      height: 150px;
+      margin-left: auto;
+      margin-right: auto;
+      /* align-self: center; */
+  }
+
+/* Table */
+tr:nth-child(even){background-color: #f2f2f2}
+    table {
+  border-collapse: collapse;
+ 
+  width: 100%;
+  border: 1px solid black;
+   margin-left: 30px;
+   margin-top: 20px; 
+}
+
+th {
+    background-color: #0056b3;
+  text-align: center;
+  padding: 8px;
+  border: 1px solid black;
+  color: white;
+}
+td {
+  text-align: center;
+  padding: 8px;
+  border:1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+                </style>
+            </head>
+
+            <body>
+                    
+                 <!-- Top contact bar -->
+                <div class="topbar text-end">
+                    <i class="bi bi-telephone"></i> Pune | Karad: +91 82 82 82 9806
+                </div>
+
+            <!-- Header --> 
+                 <header class="d-flex justify-content-between align-items-center">
+                    <img src="new_logo.png" alt="Sunbeam Logo" />
+
+                    <div class="header-right d-flex align-items-center gap-2">
+                        <button class="btnn">
+                            <i class="bi bi-pencil-square"></i> Registration & Online Admission
+                        </button>
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </header>
+
+                <!-- Navigation -->
+                <div class="navbar-custom d-flex justify-content-center py-2">
+                    <div class="box"><i class="bi bi-house me-1"></i>Home</div>
+                    <div class="box">ABOUT US</div>
+                    <div class="box">COURSES</div>
+                    <div class="box">INTERNSHIP</div>
+                    <div class="box">ADMISSIONS</div>
+                    <div class="box">TESTIMONIALS</div>
+                    <div class="box">INFRASTRUCTURE</div>
+                    <div class="box">CONTACT US</div>
+                </div>
+
+                <div class="contact">
+                    <h4>INTERNSHIP</h4>
+                    <p>Home >  <a href="#">Internship</a></p>
+                </div>
+
+                <!-- <body> -->
+                    <div class="main-container">
+                        <div class="about-section">
+                              <h5>INTERNSHIP</h5>
+                            <hr class="dashed-line">
+                            <div class="about-content">
+                          <div class="new_images">
+    <img src="internships.png" alt="internship_img">
+</div>
+     
+                <p class="about-text">
+                    GET EXPERIENCE BEFORE YOU GRADUATE<br>
+It is really difficult to sustain competitive edge of an industry. No matter you are an employer, 
+employee or an entrepreneur.<br><br>
+
+Technology, innovations and business trends has added diversified change to the organizational process. 
+Individual should acquire proficiency, mainly in technical and develop personal skills to adapt these 
+industry dynamics.<br><br>
+
+We at Sunbeam are known for providing IT training, solutions, and services. Our training approach 
+contemplate our students to take a wise decision and distinguish Sunbeam as elite institute. Our innovative 
+training methods, use of adequate technology, and emphasis on specific program adds value to success of Sunbeam.<br><br>
+
+Team at Sunbeam is young, energetic, and committed. Our team can nurture strong technical foundation
+ and build the most progressive career of a candidate in the Industry. Team Sunbeam will challenge and 
+ will definitely inspire you. Spend your good time with our team and it will definitely change your life.<br><br>
+                </p>
+           
+<!--    accordion   -->
+        
+               <button class="accordion">Student Industrial Training & Internship</button>
+<div class="panel">
+  <div class="image-row">
+<img src="IT1.jpeg" alt="image1">
+   <img src="IT2.jpeg" alt="image1">
+    <img src="IT3.jpeg" alt="image1">
+  </div>
+  <p>At Sunbeam, we recognize the importance of practical experience in shaping the careers of aspiring professionals.
+     Our industrial training and internship programs provide students with the opportunity to gain hands-on technology, develop valuable skills,
+      and explore their interests in various fields. We offer flexible durations of 1 month, 2 months, and 6 months Internship Program to 
+      accommodate the needs and schedules of students.<br><br>
+
+If you're looking for a short-term immersion or a more extensive exploration, our programs offer a blend of training, projects,
+ under the guidance of project mentors which will enhance skills and career prospects of a candidate.</p>
+</div>
+
+<button class="accordion">Training And Industrial Program Features</button>
+<div class="panel">
+    <div class="image-row">
+<img src="TI.jpg" alt="image1">
+   <img src="TI2.jpeg" alt="image1">
+    <img src="TI3.jpeg" alt="image1">
+  </div>
+  <p><b><i class="bi bi-check-circle-fill"></i> Hands-On Experience -</b> Practical learning through project-based activities aligned with industry standards.<br>
+<b><i class="bi bi-check-circle-fill"></i> Structured Training -</b> Receive comprehensive training sessions tailored to the duration and focus area of the internship.<br>
+<b><i class="bi bi-check-circle-fill"></i> Project Development - </b>Work on mini and elaborative project using conceptual knowledge for real-world scenarios.<br>
+<b><i class="bi bi-check-circle-fill"></i> Mentorship -</b> Guidance from experts throughout the internship period.<br>
+<b><i class="bi bi-check-circle-fill"></i> Evaluation and Feedback -</b> Participate in regular review meetings via Zoom for project evaluation and feedback.<br>
+<b><i class="bi bi-check-circle-fill"></i> Reporting -</b> Project Evaluation Report will be shared with the respective college where candidate is from. In case candidate joins this
+ program directly without any reference of college in such case report will be shared directly to the candidate.</p>
+</div>
+
+<button class="accordion">Placements</button>
+<div class="panel">
+    <div class="PPP">
+<img src="placement-preparation-programme.jpg" alt="image1">
+    </div>
+    
+  <p><i class="bi bi-check-circle-fill"></i> 
+     We help students prepare for the Campus Placement Programme. The PPP is a training module to improve the student’s employability skills.
+  </p>
+</div>
+
+<button class="accordion">Benefits Of Program</button>
+<div class="panel">
+   <p><i class="bi bi-check-circle-fill"></i> Gain practical skills and industry exposure.<br>
+<i class="bi bi-check-circle-fill"></i> Enhance your resume with hands-on project experience.<br>
+<i class="bi bi-check-circle-fill"></i> Receive guidance and mentorship from industry experts.<br>
+<i class="bi bi-check-circle-fill"></i> Be a part of a network with professionals and peers in specific field.<br>
+<i class="bi bi-check-circle-fill"></i> Earn a certificate upon successful completion of the program.<br>
+
+<h5>SUNBEAM TECHNOLOGY OFFERINGS FOR STUDENTS</h5>
+
+At Sunbeam, we offer a wide range of technology programs tailored to the needs of students in computer science, 
+information technology, and electronics. Each program aims to equip students with practical skills and knowledge essential 
+for their career growth. Below is a detailed list of the technologies we provide, along with their respective locations:</p>
+</div>
+
+
+
+<button class="accordion">Our associates</button>
+<div class="panel">
+   
+
+  
+  <p></p>
+</div>
+
+<button class="accordion">Available Internship Programs</button>
+<div class="panel">
+  <p></p>
+</div>
+
+
+                  
+ <!-- Table -->
+<div div style="overflow-x:auto;">
+             <table>
+    <tr>
+      <th>Sr.No</th>
+      <th>Batch</th>
+      <th>Batch Duration</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Time</th>
+      <th>Fee(Rs.)</th>
+      <th>Download Brochure</th>
+      
+    </tr>
+    <tr>
+      <td>1 </td>
+      <td>IIT-06-K-A-.net</td>
+      <td>1 Month</td>
+      <td>02-Jun-2025</td>
+      <td>30-Jun-2025</td>
+      <td>8:00 AM To 1:00 PM</td>
+      <td>5000/-</td>
+      <td></td>
+     
+    </tr>
+    <tr>
+     <td>2 </td>
+      <td>IIT-06-H-A-Python Web Development</td>
+      <td>1 Month</td>
+      <td>02-Jun-2025</td>
+      <td>30-Jun-2025</td>
+      <td>8:00 AM To 1:00 PM</td>
+      <td>5000/-</td>
+      <td></td>
+    </tr>
+    <tr>
+     <td>3 </td>
+      <td>IIT-06-H-A-Web Programming with Node.js</td>
+      <td>1 Month</td>
+      <td>02-Jun-2025</td>
+      <td>30-Jun-2025</td>
+      <td>8:00 AM To 1:00 PM</td>
+      <td>5000/-</td>
+      <td></td>
+    </tr>
+     <tr>
+     <td>4</td>
+      <td>IIT-06-H-A-CoreJava</td>
+      <td>1 Month</td>
+      <td>02-Jun-2025</td>
+      <td>30-Jun-2025</td>
+      <td>8:00 AM To 1:00 PM</td>
+      <td>5000/-</td>
+      <td></td>
+    </tr>
+     <tr>
+     <td>5 </td>
+      <td>IIT-06-H-A-DataScience(ML)</td>
+      <td>1 Month</td>
+      <td>02-Jun-2025</td>
+      <td>30-Jun-2025</td>
+      <td>8:00 AM To 1:00 PM</td>
+      <td>6000/-</td>
+      <td></td>
+    </tr>
+     <tr>
+     <td>6 </td>
+      <td>IIT-06-K-A-Web Programming with Node.js</td>
+      <td>1 Month</td>
+      <td>02-Jun-2025</td>
+      <td>30-Jun-2025</td>
+      <td>8:00 AM To 1:00 PM</td>
+      <td>5000/-</td>
+      <td></td>
+    </tr> <tr>
+     <td>7 </td>
+      <td>IIT-06-H-A-Generative AI</td>
+      <td>1 Month</td>
+      <td>02-Jun-2025</td>
+      <td>30-Jun-2025</td>
+      <td>8:00 AM To 1:00 PM</td>
+      <td>6000/-</td>
+      <td></td>
+    </tr>
+  </table>
+            </div>
+        </div>
+
+        </div>
+          
+
+        <!-- sidebar -->
+        <div class="sidebar">
+           
+                 <div class="card">
+    <img src="sidebar_img_icon.png" alt="Registration" class="center-image">
+    <h2>Registration<br><span>& <br>Online Admission</span></h2>
+    <button class="btn">Register Now</button>
+  </div>
+        </div>
+ </div>
+         
+ <!-- Last Contact-section -->
+              <section class="contact-section">
+
+<div class="contact-container">
+        <div class="row"><h1 class="cont">Contact Us</h1>
+ <div class="contact-box">
+        <h2><i class="bi bi-geo-alt-fill"></i> SUNBEAM MARKET YARD PUNE</h2>
+        <p class="address">'Sunbeam Chambers', Plot No.R/2, Market Yard Road, Behind Hotel Fulora, Gultekdi,<br>
+           Pune - 411 037. MH-INDIA.</p>
+        <div class="contact-info">
+          <p><i class="bi bi-telephone"></i>+91 82 82 82 9806</p>
+          <p><i class="bi bi-envelope"></i> scc@sunbeaminfo.in</p>
+        </div>
+      </div>
+
+        <div class="contact-box">
+        <h2><i class="bi bi-geo-alt-fill"></i> SUNBEAM HINJAWADI PUNE</h2>
+        <p class="address">"Sunbeam IT Park", Second Floor, Phase 2 of Rajiv Gandhi Infotech Park, Hinjawadi,<br>
+           Pune - 411057, MH-INDIA.</p>
+        <div class="contact-info">
+          <p><i class="bi bi-telephone"></i> +91 82 82 82 9806</p>
+          <p><i class="bi bi-envelope"></i> scc@sunbeaminfo.in</p>
+        </div>
+      </div>
+    </div>
+    </div>
+                      </section>
+
+
+    </div>
+     <script src="accordation.js"></script>
+</body>
+</html>
+
+                
+            
