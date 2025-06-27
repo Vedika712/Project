@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Batch | Sunbeam</title>
+    <!-- bootstrap -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Notyf.css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        padding: 20px;
+        background-color: #f8f9fa;
+      }
+      .container {
+        max-width: 600px;
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        margin-top: 50px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      }
+      h1 {
+        color: #004a7c;
+        margin-bottom: 30px;
+      }
+      .submit-field {
+        background-color: #004a7c;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        width: 100%;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .submit-field:hover {
+        background-color: #003366;
+      }
+      .date-fields {
+        display: flex;
+        gap: 15px;
+      }
+      .date-fields .form-group {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Add New Batch</h1>
+      <form id="batch-form">
+        <div class="form-group">
+          <label for="batchName">Batch Name</label>
+          <input type="text" id="batchName" class="form-control" required />
+        </div>
+        
+        <div class="date-fields">
+          <div class="form-group">
+            <label for="startDate">Start Date</label>
+            <input type="date" id="startDate" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label for="endDate">End Date</label>
+            <input type="date" id="endDate" class="form-control" required />
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="timeSlot">Time Slot</label>
+          <input type="text" id="timeSlot" class="form-control" placeholder="e.g. 9:00 AM - 12:00 PM" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="fees">Fees (₹)</label>
+          <input type="number" id="fees" class="form-control" min="0" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="location">Location</label>
+          <select id="location" class="form-control" required>
+            <option value="">Select Location</option>
+            <option value="Sunbeam Hinjawadi Pune">Sunbeam Hinjawadi Pune</option>
+            <option value="Sunbeam Market Yard Pune">Sunbeam Market Yard Pune</option>
+            <option value="Sunbeam Karad">Sunbeam Karad</option>
+            <option value="Online Mode">Online Mode</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <input type="submit" class="submit-field" value="Add Batch" />
+        </div>
+      </form>
+    </div>
+
+    <!-- notyf.min.js -->
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+
+    <script>
+      document
+        .getElementById("batch-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          
+          const batchName = document.getElementById("batchName").value;
+          const startDate = document.getElementById("startDate").value;
+          const endDate = document.getElementById("endDate").value;
+          const timeSlot = document.getElementById("timeSlot").value;
+          const fees = document.getElementById("fees").value;
+          const location = document.getElementById("location").value;
+
+          // Validate date range
+          if (new Date(endDate) < new Date(startDate)) {
+            var notyf = new Notyf({
+              duration: 3000,
+              position: { x: 'right', y: 'top' }
+            });
+            notyf.error('End date must be after start date');
+            return;
+          }
+
+          // Create a new batch object
+          const newBatch = {
+            name: batchName,
+            startDate: startDate,
+            endDate: endDate,
+            timeSlot: timeSlot,
+            fees: fees,
+            location: location
+          };
+
+          // Here you would typically call your backend service to save the batch
+          // For now we'll just log it and show success message
+          console.log('New Batch:', newBatch);
+          
+          // Show success notification
+          var notyf = new Notyf({
+            duration: 3000,
+            position: { x: 'right', y: 'top' }
+          });
+          notyf.success('Batch added successfully!');
+
+          // Reset form and redirect
+          document.getElementById("batch-form").reset();
+          setTimeout(() => {
+            window.location.href = "batches.html"; // Redirect to batches listing page
+          }, 1500);
+        });
+    </script>
+  </body>
+</html>
