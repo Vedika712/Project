@@ -1,19 +1,17 @@
-            <!DOCTYPE html>
-            <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admissions Rules - Sunbeam</title>
+ <link rel="icon" href="new_logo.png">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-            <head>
-                <meta charset="UTF-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title> Sunbeam</title>
-
-                <!-- Bootstrap & Icons -->
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet" />
-               <link rel="icon" href="new_logo.png">
-                <style>
-
-
-                     .topbar {
+  <style>
+     .topbar {
                         background-color: #004080;
                         color: white;
                         font-size: 0.9rem;
@@ -39,6 +37,13 @@
                         align-items: center;
                         white-space: nowrap;
                     }
+                      body {
+                        font-family: Arial, sans-serif;
+                        /* margin: 30px; */
+                        padding: 0;
+                        width: 100%;
+                    }
+
 
             .social-icon {
                 font-size: 1rem;
@@ -68,7 +73,9 @@
                     .social-icon:hover {
                         background-color: #0056b3;
                     }
-                    .navbar {
+                   
+
+                       .navbar {
       background-color: #004a7c;
       display: flex;
       justify-content: center;
@@ -78,7 +85,6 @@
 
     .navbar a {
       color: white;
-      /* background-color: #004a7c; */
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
@@ -190,21 +196,14 @@
     .dropdown-section a:hover {
       background-color: rgba(0,0,0,0.05);
     }
-    .contact {
-                        background-color: black;
-                        padding: 20px;
-                        text-align: center;
-                        color: white;
-                    }
-                       a{
-        color: inherit;
-        text-decoration: none;
-    }
-      a:hover{
-        color:dodgerblue
+
+    .banner {
+      background: linear-gradient(to bottom right, #fde6e6, #fad7e8);
+      padding: 40px 20px;
+      text-align: center;
+      border: 3px solid #900;
     }
 
-   
                     .geek2 {
                         font-size: 20px;
                         font-weight: bold;
@@ -217,63 +216,117 @@
                         text-align: center;
                         color: white;
                     }
-                    
-                   
-                    body {
-                        font-family: Arial, sans-serif;
-                      
-                        padding: 0;
+                     .banner {
+      background: linear-gradient(to bottom right, #fde6e6, #fad7e8);
+      padding: 40px 20px;
+      text-align: center;
+      border: 3px solid #900;
+    }
+     .contact {
+                        background-color: black;
+                        /* padding: 20px; */
+                        text-align: center;
+                        color: white;
                     }
-
-                    .main-container {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        padding: 20px;
-                    }
-
-                    .about-section {
-                        flex: 3;
-                        padding-right: 20px;
-                    }
-
-                    h3 {
-                      
-                        margin-bottom: 5px;
-                        margin-left: 50px;
-                    }
-
-                    .dashed-line {
-                        border-top: 2px dashed #15090965;
-                        margin-bottom: 20px;
-                    
-                    }
-
-                    
-
-                    .image-container img {
-                        width: 600px;
-                        height: 250px;
-                        border-radius: 10px;
-                        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
-                        margin-left: 50px;
-                    }
-
-                    .about-text {
-                        margin-top: 20px;
-                        font-size: 16px;
-                        color: #333;
-                        text-align: justify;
-                        margin-left: 50px;
-                    }
-
-
-                     .list-group-item{
-        background-color: rgb(246, 242, 242);
+                       a{
+        color: inherit;
+        text-decoration: none;
+    }
+      a:hover{
+        color:dodgerblue
     }
 
+    .main-content {
+      padding: 30px 15px;
+    }
 
-    .card1 {
+    .rules-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #004a7c;
+      border-bottom: 1px solid #004a7c;
+      padding-bottom: 10px;
+    }
+
+    .rules-section {
+      background-color: white;
+      padding: 25px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    .rules-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .rules-list li {
+      padding: 10px 0;
+      border-bottom: 1px dashed #ddd;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .rules-list li:last-child {
+      border-bottom: none;
+    }
+
+    .rules-list li::before {
+      content: "•";
+      color: #004a7c;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-right: 10px;
+    }
+
+    .highlight-box {
+      background-color: #f8f9fa;
+      border-left: 4px solid #004a7c;
+      padding: 15px;
+      margin: 20px 0;
+    }
+
+    .sidebar-nav {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .sidebar-nav li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar-nav a {
+      display: block;
+      padding: 10px 15px;
+      background-color: #f8f9fa;
+      color: #004a7c;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .sidebar-nav a:hover {
+      background-color: #004a7c;
+      color: white;
+    }
+
+    .sidebar-nav a.active {
+      background-color: #004a7c;
+      color: white;
+    }
+
+   .card-header-custom {
+      background-color: #336699;
+      color: white;
+      font-weight: bold;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+
+     .card1 {
       width: 60px;
       height: 600px;
       position: relative;
@@ -320,25 +373,23 @@
       background-color: rgb(50, 34, 79);
 
     }
-                    
-                   
 
-   .contact-section {
+.contact-section {
                         background: #0f3b5c url('bg-pattern.png'); /* replace bg-pattern.png if you want */
                         color: white;
                         padding: 40px 20px;
                         margin-top: 10px;
                     }
+                    
+
 
                     .contact-container {
                         display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
-      max-width: 1200px;   
-      width: 100%;
-      padding: 0 40px;
-      margin: 0; /* remove auto margin */
-        }
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
     .contact-box {
       flex: 1 1 400px;
@@ -394,12 +445,12 @@
 .footer-bar a:hover {
   text-decoration: underline;
 }
-                </style>
-            </head>
+  </style>
+</head>
 
-            <body>
-                    
-                 <!-- Top contact bar -->
+<body>
+
+    <!-- Top contact bar -->
                 <div class="topbar text-end">
                     <i class="bi bi-telephone"></i> Pune | Karad: +91 82 82 82 9806
                 </div>
@@ -408,8 +459,8 @@
                  <header class="d-flex justify-content-between align-items-center">
                     <img src="new_logo.png" alt="Sunbeam Logo" />
 
-                       <div class="header-right d-flex align-items-center gap-2">
-                        <a href="registration_form.html">
+                      <div class="header-right d-flex align-items-center gap-2">
+                        <a href="registration_form.html" style="text-decoration: none;">
                           <button class="btnn" >
                            <i class="bi bi-pencil-square"></i> Registration & Online Admission
                         </button>
@@ -421,9 +472,9 @@
                         <a href="https://www.instagram.com/siitofficial/" class="social-icon" target="_blank"><i class="bi bi-instagram"></i></a>
                     </div>
                 </header>
-
-                <!-- Navigation -->
-                <div class="navbar">
+                   
+  <!--  about us Navbar -->
+  <div class="navbar">
     <div class="dropdown">
       <a href="#">ABOUT US</a>
       <div class="dropdown-content about">
@@ -436,7 +487,6 @@
       </div>
     </div>
  
-
   <!-- courses Navbar -->
     <div class="dropdown">
       <a href="#">COURSES</a>
@@ -513,59 +563,65 @@
     <a href="testimonials.html">TESTIMONIALS</a>
     <a href="infrastucture.html">INFRASTRUCTURE</a>
     <a href="P_contact.html">CONTACT US</a>
-  
+   <!-- <a href="nextpage.html" class="btn btn-primary">Previous</a> -->
+
+
+     
    </div>
+
  <div class="contact">
                     <h4>ADMISSIONS</h4>
-                    <p><a href="P_Homepage.html"> Home</a> &gt;
-                      <a href="#">About Us</a> &gt;
-                      <a href="P_About_us.html">About Sunbeam</a></p>
+                    <p><a href="P_Homepage.html">Home</a> &gt;
+                      <a href="#">Admissions</a> &gt;
+                      <a href="#">Rules</a></p>
                 </div>
-
-                <!-- <body> -->
-                    <div class="main-container">
-                        <div class="about-section">
-                            <h3>ABOUT SUNBEAM</h3>
-                            <hr class="dashed-line">
-                            <div class="about-content">
-                                <div class="image-container">
-                    <img src="sunbeam_building.jpg" alt="Sunbeam Building">
-                </div>
-                <p class="about-text">
-                    At Sunbeam we believe retaining a competitive edge is imperative for any individual in today's professional world. 
-                    Companies are restructuring their organizations & reengineering their business processes. Not only have the challenges
-                    become more demanding, but also the rewards of staying at the forefront seem to be promising.<br><br>
-                    In this scenario, technical & personal skills which provide effective solutions & time critical support are of
-                    principal significance for the long term growth of professionals. Sunbeam's expertise in effectively delivering 
-                    training, solutions & services has made it a favored institution to many students & professionals focused on an
-                    aggressive career growth strategy. <br> <br>
-                    Sunbeam's proven track record in bringing about effective transformations in individuals is backed by a solid 
-                    understanding of the rapidly changing needs of the industry & the global business scenario. Sunbeam's success has
-                    been built on its comprehensively researched, innovative training methodologies, deployment of technology and an 
-                    emphasis on transformational & industry-relevant programs offering value-added services to its clients. A young and 
-                    dynamic management team and carefully recruited and trained staff members drive Sunbeam's business vision & have
-                    established strong credentials in a short span of time.<br><br>
-                    Sunbeam Group's expertise in effectively delivering training & solutions has made it a favored associate to many
-                     establishments focused on aggressive growth strategies. Since it's humble beginnings in the late 90's Sunbeam Group 
-                     has today, evolved into a multi-technology, multi-location competency center with IT professionals capable of 
-                     delivering high-end technological training & solutions in diverse modes. Their expertise in various IT fields has 
-                     made Sunbeam Group a premium turnkey solution provider.
-                </p>
-            </div>
+  
+  <!-- Main Content -->
+  <div class="container main-content">
+    <div class="row">
+      <!-- Main Left Content -->
+      <div class="col-md-8">
+        <h4 class="rules-title">RULES AND REGULATIONS</h4>
+        
+        <div class="rules-section">
+          <ul class="rules-list">
+            <li>Registration Forms are available only at <a href="http://admission.sunbeaminfo.com/aspx/CourseSchedule.aspx" target="_blank">http://admission.sunbeaminfo.com/aspx/CourseSchedule.aspx</a></li>
+            <li>Students have to fill the Online Registration Form for admission. There is no any other method for registration for part time courses.</li>
+            <li>Before registration please go through the Course Contents, Batch Schedule, Timings, Fees detail and Eligibility Criteria.</li>
+            <li>Students are not required to submit print out of Registration Form and any documents.</li>
+            <li><strong>Course Fees once paid is non refundable and non transferable.</strong></li>
+            <li>Admission is confirmed only after receipt of payment at bank on or before last date of payment as per course schedule.</li>
+             <li>Kindly follow the instructions on "Procedure" page to pay the fees. </li>
+               <li>Course Caution Deposit (refundable) can be deposited through Online payment / Internet Banking. The Course Caution deposit will be refunded at the end of course in online mode after deducting some amount against extra educational services that will be provided during the six months of the course and campus placement period in case of any.</li>
+                 <li>Please carry the Institute Copy of fees paid receipt on the first day of the batch and submit the same in the office.</li>
+                 <li>Identity Cards will be issued on first day of the batch.</li>
+               </li>Identity Card is must while entering in the SunBeam Campus. Students without Identity Card are not allowed to attend the Lecture or Lab.</li>
+                 <li>If you lose your Identity Card a duplicate Identity Card will be issued at an additional cost.</li>
+                 <li>Make sure that you are present in Lecture Hall and Lab at least 5 min before the scheduled time</li>
+               <li>Student will be responsible for the loss of Lecture or Lab sessions due to their leave / absenteeism.</li>
+                 <li>Please switch off your Mobile Phones whenever you are in lecture hall or lab.</li>
+          </ul>
+          
+          <div class="highlight-box">
+            <strong>Course Fees to be paid on or before last date of payment.</strong>
+          </div>
         </div>
+      </div>
+    
 
-       
-
-
- <div class="col-md-4 d-flex flex-column align-items-start">
+      <div class="col-md-4 d-flex flex-column align-items-start">
   <!-- Branch Card -->
   <div class="card w-100 shadow" style="border-radius: 10px; padding-top: 0;">
     <div class="card-header text-white" style="background-color: #140a9c; border-radius: 10px 10px 0 0;">
-      ABOUT US
+ADMISSIONS
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item"><a href="P_About_us.html" class="text-dark text-decoration-none">About Sunbeam</a></li>
-     
+
+
+       <li class="list-group-item"><a href="Procedures.html" class="text-decoration-none">Procedures</a></li>
+              <li class="list-group-item"><a href="admission_Rules.html" class="active">Rules</a></li>
+              <li class="list-group-item"><a href="#">FAQs</a></li>
+               <li class="list-group-item"><a href="course_schedule.html">Registration & Onine Admission</a></li>
     </ul>
   </div><br>
 
@@ -573,20 +629,19 @@
   <div class="card1 w-100">
     <div class="card1-content d-flex flex-column justify-content-center align-items-center">
       <h2><b>Courses</b></h2>
-      <!-- <h2><b>&</b></h2>
-      <h2><b>Online Admission</b></h2> -->
        <a href="course_schedule.html">
-                          <button type="button" class="btn btn-light" style="color:rgb(13, 203, 236);">View Course Schedule</button>
+                          <button type="button" class="btn btn-light" style="color:rgb(13, 203, 236);">View Courses Schedule</button>
                         </a>
     </div>
   </div>
 </div>
-    </div>        
+   </div>
+  </div>
+     
+     <section class="contact-section">
 
-              <section class="contact-section">
-
-<div class="contact-container" >
-        <div class="row"><h1 class="cont" >Contact Us</h1>
+<div class="contact-container">
+        <div class="row"><h1 class="cont">Contact Us</h1>
  <div class="contact-box">
         <h2><i class="bi bi-geo-alt-fill"></i> SUNBEAM MARKET YARD PUNE</h2>
         <p class="address">'Sunbeam Chambers', Plot No.R/2, Market Yard Road, Behind Hotel Fulora, Gultekdi,<br>
@@ -610,7 +665,7 @@
     </div>
                       </section>
 
-                      <!-- Footer -->
+    <!-- Footer -->
 <div class="footer-bar">
   <div class="container d-flex justify-content-between align-items-center flex-wrap">
     <div class="text-white small">
@@ -628,9 +683,8 @@
   </div>
 </div>
 
-    
+  
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 </html>
-
-                
-            

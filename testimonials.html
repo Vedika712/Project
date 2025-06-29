@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Testimonials</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+   <link rel="icon" href="new_logo.png">
+  <style>
+    .topbar {
+              background-color: #004080;
+              color: white;
+              font-size: 0.9rem;
+              padding: 5px 20px;
+            }
+               /* Header */
+    header {
+              background-color: white;
+              padding: 10px 20px;
+            }
+    header img {
+              height: 60px;
+            }
+    .header-right .btnn{
+               background-color: #004080;
+               color: white;
+               font-weight: bold;
+               background-color: 2px solid skyblue;
+               height: 38px;
+               padding: 0 12px;
+               display: flex;
+               align-items: center;
+               white-space: nowrap;
+            }              
+     .social-icon {
+                font-size: 1rem;
+                width: 38px;
+                height: 38px;
+                background-color: #007bff;
+                color: white;
+                border: 1px solid white;
+                text-align: center;
+                display: inline-flex;
+                align-items: center;
+                background-color: #007bff;
+                justify-content: center;
+           }                    
+      .social-icon:hover {
+                background-color: #0056b3;
+            }
+            /* Navigation Bar */
+      .navbar {
+                background-color: #004a7c;
+                display: flex;
+                justify-content: center;
+                padding: 10px 0;
+                position: relative;
+            }
+      .navbar a {
+                color: white;
+                margin: 0 15px;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+      .navbar a:hover {
+                text-decoration: underline;
+            }
+      .dropdown {
+                position: relative;
+                display: inline-block;
+        }
+
+    /* dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f8f9fa;
+      min-width: 800px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 15px;
+      border-radius: 5px;
+      color: #333;
+      margin-left: 100px;
+    }
+
+    .dropdown-content.about {
+      min-width: 200px;
+    }
+
+    .dropdown-content.admissions {
+      min-width: 300px;
+    }
+    
+    .dropdown-content.login {
+      min-width: 200px;
+      left: auto;
+      right: 0;
+      transform: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-section {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    .dropdown-section.red-box {
+      background-color: hsl(288, 48%, 72%);
+      border-left: 4px solid #d436f4;
+    }
+
+    .dropdown-section.green-box {
+      background-color: #e8f5e9;
+      border-left: 4px solid #4caf50;
+    }
+
+    .dropdown-section.blue-box {
+      background-color: #e3f2fd;
+      border-left: 4px solid #2196f3;
+    }
+
+    .dropdown-section h4 {
+      color: #333;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .dropdown-section.red-box h4 {
+      color: #390e49;
+    }
+
+    .dropdown-section.green-box h4 {
+      color: #2e7d32;
+    }
+
+    .dropdown-section.blue-box h4 {
+      color: #0d47a1;
+    }
+
+    .dropdown-section ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .dropdown-section li {
+      margin-bottom: 5px;
+      padding: 3px 0;
+    }
+
+    .dropdown-section a {
+      color: #333;
+      text-decoration: none;
+      display: block;
+      padding: 2px 5px;
+    }
+
+    .dropdown-section a:hover {
+      background-color: rgba(0,0,0,0.05);
+    }
+
+    .banner {
+      background: linear-gradient(to bottom right, #fde6e6, #fad7e8);
+      padding: 40px 20px;
+      text-align: center;
+      border: 3px solid #900;
+    }
+     .contact {
+                        background-color: black;
+                        padding: 20px;
+                        text-align: center;
+                        color: white;
+                    }
+                     a{
+        color: inherit;
+        text-decoration: none;
+    }
+     a:hover{
+        color:dodgerblue
+    }
+   
+
+
+
+    /* Testimonials Container */
+    .testimonials-main {
+      max-width: 1000px;
+      margin: 30px auto;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .testimonials-header {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Tabs Navigation */
+    .tabs-nav {
+      display: flex;
+      background-color: #f1f1f1;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 12px 0;
+      text-align: center;
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-size: 16px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .tab-btn:hover {
+      background-color: #e0e0e0;
+    }
+
+    .tab-btn.active {
+      background-color: white;
+      border-bottom: 3px solid #333;
+    }
+
+    /* Tab Content */
+    .tab-content {
+      display: none;
+      padding: 20px;
+      color: #333;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Bubble Testimonials */
+
+    .testimonial {
+      margin-bottom: 50px;
+    }
+
+    .bubble {
+      background-color: #034666;
+      padding: 20px 30px;
+      color: #d3e4ed;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
+      max-width: 1000px;
+      line-height: 1.6;
+    }
+
+    .bubble::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      width: 0;
+      height: 0;
+      border: 15px solid transparent;
+    }
+
+    .testimonial.left .bubble {
+      margin-left: 40px;
+    }
+
+    .testimonial.left .bubble::before {
+      left: -30px;
+      border-right-color: #004b6f;
+    }
+
+    .testimonial.right .bubble {
+      margin-left: auto;
+      margin-right: 40px;
+    }
+
+    .testimonial.right .bubble::before {
+      right: -30px;
+      border-left-color: #004b6f;
+    }
+
+    h5 {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #d3e4ed;
+    }
+
+    p.small {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      color: #d3e4ed;
+    }
+
+    /* Video Gallery */
+
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .video-title {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+
+    
+       .contact-section {
+                        background: #0f3b5c url('bg-pattern.png'); /* replace bg-pattern.png if you want */
+                        color: white;
+                        padding: 40px 20px;
+                        margin-top: 10px;
+                    }
+
+                    .contact-container {
+                        display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 1200px;   
+      width: 100%;
+      padding: 0 40px;
+      margin: 0; /* remove auto margin */
+        }
+
+    .contact-box {
+      flex: 1 1 400px;
+      margin: 20px;
+    }
+
+    .cont{
+        padding-left: 25px;
+    }
+    .contact-box h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      font-size: 16px;
+      margin: 5px 0;
+     
+    }
+
+    .contact-box .icon {
+      margin-right: 8px;
+    }
+
+    .contact-info {
+      margin-top: 15px;
+    }
+
+    .contact-info p {
+      display: flex;
+      align-items: center;
+     
+    }
+    
+    .contact-info p i {
+      margin-right: 10px;
+    }  
+    /* footer */
+
+    .footer-bar {
+        background-color: #004476;
+        padding: 10px 20px;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 0.9rem;
+      }
+
+.footer-bar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-bar a:hover {
+  text-decoration: underline;
+}
+  </style>
+</head>
+<body>
+
+  <!-- Top contact bar -->
+                <div class="topbar text-end">
+                    <i class="bi bi-telephone"></i> Pune | Karad: +91 82 82 82 9806
+                </div>
+
+            <!-- Header --> 
+              <header class="d-flex justify-content-between align-items-center">
+                    <img src="new_logo.png" alt="Sunbeam Logo" />
+
+                      <div class="header-right d-flex align-items-center gap-2">
+                        <a href="course_schedule.html">
+                          <button class="btnn" >
+                           <i class="bi bi-pencil-square"></i> Registration & Online Admission
+                        </button>
+                        </a>
+                        <a href="https://www.facebook.com/sunbeamgroup" class="social-icon" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="https://x.com/siitofficial" class="social-icon" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/sunbeam-institute-of-information-technology/" class="social-icon" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.youtube.com/channel/UCODzoBuQt0L8FtfzWhaMwoA" class="social-icon" target="_blank"><i class="bi bi-youtube"></i></a>
+                        <a href="https://www.instagram.com/siitofficial/" class="social-icon" target="_blank"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </header>
+               
+  <!--  about us Navbar -->
+  <div class="navbar">
+    <div class="dropdown">
+      <a href="#">ABOUT US</a>
+      <div class="dropdown-content about">
+        <div class="dropdown-section blue-box">
+          <ul>
+            <li><a href="P_About_us.html">ABOUT SUNBEAM</a></li>
+            <li><a href="infrastucture.html">BRANCHES</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ 
+
+  <!-- courses Navbar -->
+    <div class="dropdown">
+      <a href="#">COURSES</a>
+      <div class="dropdown-content">
+        <div class="row">
+
+          <div class="col-md-4">
+            <div class="dropdown-section red-box">
+              <h4>ENTRANCE PREPARATORY COURSES</h4>
+              <ul>
+                <li><a href="#">Pre-CAT</a></li>
+                <li><a href="#">Mastering MCQs</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown-section green-box">
+              <h4>INTERNSHIP</h4>
+              <ul>
+                <li><a href="#">Web Programming with Node.js</a></li>
+                <li><a href="#">Machine Learning</a></li>
+                <li><a href="#">Core Java</a></li>
+                <li><a href="#">Python Web Development</a></li>
+                <li><a href="#">Asp.Net</a></li>
+                <li><a href="#">Generative AI</a></li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="col-md-4">
+            <div class="dropdown-section green-box">
+              <h4>SUNBEAM CERTIFIED COURSES</h4>
+              <ul>
+                <li><a href="#">Core Java</a></li>
+                <li><a href="#">Data Structures and Algorithms</a></li>
+                <li><a href="#">Dev Ops</a></li>
+                <li><a href="#">Machine Learning</a></li>
+                <li><a href="#">Mastering GenAI</a></li>
+                <li><a href="#">MERN (FULL-STACK) DEVELOPMENT</a></li>
+                <li><a href="#">Python Development</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dropdown-section red-box">
+              <h4>CAMPUS PREPARATION COURSES</h4>
+              <ul>
+                <li><a href="#">Aptitude</a></li>
+                <li><a href="#">Mastering MCQs</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!--  admission Navbar -->
+    <a href="P_Internship.html">INTERNSHIP</a>
+    <div class="dropdown">
+      <a href="#">ADMISSIONS</a>
+      <div class="dropdown-content admissions">
+        <div class="dropdown-section blue-box">
+          <ul>
+           <li><a href="Procedures.html">PROCEDURES</a></li>
+            <li><a href="admission_Rules.html">RULES</a></li>
+            <li><a href="#">FAQS</a></li>
+            <li><a href="course_schedule.html">REGESTRATITION AND ONLINE ADMISSIONS</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <a href="testimonials.html">TESTIMONIALS</a>
+    <a href="infrastucture.html">INFRASTRUCTURE</a>
+    <a href="P_contact.html">CONTACT US</a>
+   </div>
+
+          <!-- black div -->
+     <div class="contact">
+                    <h4>TESTIMONIALS</h4>
+                    <p><a href="P_Homepage.html">Home</a>&gt;
+                      <a href="testimonials.html">Testimonials</a> </p>
+                </div>
+
+            <!-- Main Content -->
+            <div class="container py-5">
+              <!-- Testimonials Section -->
+              <div class="testimonials-main">
+                <div class="testimonials-header">TESTIMONIALS</div>
+                
+                <div class="tabs-nav">
+                  <button class="tab-btn active" data-tab="comments">COMMENTS</button>
+                  <button class="tab-btn" data-tab="feedback">IT GURU'S FEEDBACK</button>
+                  <button class="tab-btn" data-tab="videos">VIDEOS</button>
+                </div>
+                
+                <!-- Comments Tab -->
+                <div id="comments" class="tab-content active">
+                  <div class="testimonial left">
+                    <div class="bubble">
+                      <p>Internship Session was good. We learnt many interesting things that are useful from career point of view. The interviews arranged were good & useful for us. We came to know many things & will try to improve on our drawbacks. The overall internship was helping & very good.</p>
+                      <h5>Gayatri Harane</h5>
+                      <p class="small">IoT Internship, Dec 2019<br>Sunbeam<br>Pune</p>
+                    </div>
+                  </div>
+
+                  <div class="testimonial right">
+                    <div class="bubble">
+                      <p>This was my first internship and had an excellent experience. The staff was well versed in technology, friendly and helpful. Got a lot of different information in Electronics too.</p>
+                      <h5>Yash Mehta</h5>
+                      <p class="small">IoT Internship, Dec 2019<br>Sunbeam<br>Pune</p>
+                    </div>
+                  </div>
+
+                  <div class="testimonial left">
+                <div class="bubble">
+                  <p>I am satisfied with SunBeam's Internship. My experience was very good and project team leads are also so talented and helpful.</p>
+                  <h5>Vaishnavi Moholkar</h5>
+                  <p class="small">IoT Internship, Dec 2019<br>Sunbeam<br>Pune</p>
+                </div>
+              </div>
+
+              <div class="testimonial right">
+                <div class="bubble">
+                  <p>Excellent teaching style and excellent understanding of teaching topics. I like how Sandeep sir helps to improve visualization of code using diagrams and examples.</p>
+                  <h5>Rishabh Desai</h5>
+                  <p class="small">Core Java - 2020<br>Sunbeam<br>Pune</p>
+                </div>
+              </div>
+          <div class="testimonial left">
+                <div class="bubble">
+                  <p>Sir, it's been a great session with you. The way you taught is very good. It's my first time learning java language and I never felt left out.</p>
+                  <h5>Harsh Gupta</h5>
+                  <p class="small">Core Java - 2020<br>Sunbeam<br>Pune</p>
+                </div>
+              </div>
+
+              <div class="testimonial left">
+                <div class="bubble">
+                  <p>There are two types of teachers, one who teach their students what the syllabus dictates and the other, who go beyond the coursework to teach their students things that life dictates. I really had a fantastic time taking your course. Start from the "Compiling Program without IDE to Reflection" I don’t owe my professional success to my destiny, courage, luck, belief, confidence, or fortune. I owe it to a wonderful scholar like you. Nothing can come close to the inspirational presence of an instructor like you in a student’s journey. You are a great trainer organized, responsive, patient, and able to clearly explain complex topics and nuances. Being so encouraging and doing everything you can to keep us motivated and supported throughout our program. Your knowledge and leadership provide us with a priceless model for our own careers. I am so happy you are part of my education. Thank you for teaching me that emotion and logic exist best together. I learned to truly care about diversity and inclusion through your classes, and I hopefully now spread that message in a passionate but thoughtful way. You’re awesome!</p>
+                  <h5>Abhilash Kamble</h5>
+                  <p class="small">Core Java - 2020<br>Sunbeam<br>Pune</p>
+                </div>
+              </div>
+
+              <div class="testimonial right">
+                <div class="bubble">
+                  <p>Excellent sessions by Sandeep Sir enjoyed learning core of the Java. Sandeep sir's way of teaching is excellent and easily understood by anyone. Considering the fact that Java is not that simple when it moves to its complex features to any beginner or who doesn't work on Java, it needs much more revisions and continued coding practice. Sandeep sir has made it very easy to understand and taught us exactly how to think in Java. And it clearly seen in the sessions how much hard work has to be done offline to create any notes and diagrams to make things simple and easily understandable. Thank you sir for conducting the sessions. Really looking forward to see you in next advance sessions. </p>
+                  <h5>Rohit Dhange</h5>
+                  <p class="small">Core Java - 2020<br>Cognizant<br>Pune</p>
+                </div>
+              </div>
+              <div class="testimonial left">
+                <div class="bubble">
+                  <p>I really appreciate the way sir explains any concept... also attend such webinars.</p>
+                  <h5>Shalaka Gujar</h5>
+                  <p class="small">Advanced JS Workshop - Apr 2020<br>Sunbeam<br>Pune</p>
+                </div>
+              </div>
+
+              <div class="testimonial right">
+                <div class="bubble">
+                  <p>Amit Sir, will be providing the videos on the missed topic which was something I liked the most. It shows his seriousness towards his teaching. He is such a great teacher who really wants the student to learn. Its not that he will teach just to cover the topics keeping the watch in front. I was really impressed by such a teaching skill and most importantly it was an online class and he was teaching so flawlessly . I would say it was the best online class I have ever attended. Thanks a lot Sir. You are so patient and awesome teacher. Respect for you.  </p>
+                  <h5>Kiti Shrivastava</h5>
+                  <p class="small">Advanced JS Workshop - Apr 2020<br>Sunbeam<br>Pune</p>
+                </div>
+              </div>
+
+              <div class="testimonial left">
+                <div class="bubble">
+                  <p>It is always good to learn from Amit sir... added some more concepts to my learning in a new way.</p>
+                  <h5>Aditya Dubey</h5>
+                  <p class="small">Advanced JS Workshop - Apr 2020<br>I Rocket Software<br>Pune</p>
+                </div>
+          </div>
+
+
+                </div>
+
+
+          
+          <!-- Feedback Tab -->
+
+          <div id="feedback" class="tab-content">
+            <div class="testimonial left">
+              <div class="bubble">
+                <p>Being an education service provider is one thing, being able to make a difference to the lives of an entire generation of IT talent of country is a different matter altogether. SunBeam surely belongs to the second category. From black board to white-board to Overhead projector to LCD Projector to Video Conferencing System - SunBeam has seen it all in the past decade. What is important is that it has adapted itself every time technology took a turn for the better. That is the essence of everything that Mr. Sarang Patil, Mr. Nitin Kudale and their very efficient and able team has been doing all along. It has been a memorable journey for SunBeam in the past decade and I am all the more happy to state that I have been able to participate and witness this journey in more ways than one. I am sure that SunBeam will go from strength to strength in future.</p>
+                <h5>Yashvant Kanetkar</h5>
+                <p class="small">Director, Decube Technologies<br>Author "Let Us C"</p>
+              </div>
+            </div>
+
+            <div class="testimonial right">
+              <div class="bubble">
+                <p>I have always experienced an extraordinary enthusiasm in the environment at SunBeam, which is very important. Personality development & soft skills are extremely important along with technical excellence. Whenever I have been to SunBeam I have felt that apart from technical up gradation a lot of attention is paid to the personality development aspects of students. This really is an important thing.</p>
+                <h5>Achyut Godbole</h5>
+                <p class="small">Managing Director, Soft Excel Consultancy Services<br>Author, "Operating Systems"</p>
+              </div>
+            </div>
+
+            <div class="testimonial left">
+              <div class="bubble">
+                <p>Since I know SunBeam for years & have interacted with SunBeam people & students, I can spend a lot of time describing various attributes of SunBeam that adds value to its students. I would entrust my son or my daughter to pick up IT skills at SunBeam without any hesitation what so ever. My children are my most valuable asset.</p>
+                <h5>Ivan Bayross</h5>
+                <p class="small">Director, Silicon Chip Technologies<br>Author, "Mastering Database Technologies"</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Videos Tab -->
+
+          <div id="videos" class="tab-content">
+            <div class="video-gallery">
+              <div class="video-item">
+                <div class="video-container">
+                  <iframe src="https://www.youtube.com/embed/eAewq2VT5q8?start=2" allowfullscreen></iframe>
+                </div>
+                <div class="video-title">Sunbeam Testimonial 1</div>
+              </div>
+              
+              <div class="video-item">
+                <div class="video-container">
+                  <iframe src="https://www.youtube.com/embed/1OKiACeKwVM?start=65" allowfullscreen></iframe>
+                </div>
+                <div class="video-title">Sunbeam Testimonial 2</div>
+              </div>
+              
+              <div class="video-item">
+                <div class="video-container">
+                  <iframe src="https://www.youtube.com/embed/eAewq2VT5q8?start=2" allowfullscreen></iframe>
+                </div>
+                <div class="video-title">Sunbeam Testimonial 3</div>
+              </div>
+              
+              <div class="video-item">
+                <div class="video-container">
+                  <iframe src="https://www.youtube.com/embed/1OKiACeKwVM?start=65" allowfullscreen></iframe>
+                </div>
+                <div class="video-title">Sunbeam Testimonial 4</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+          <!-- Sections active -->
+            <script>
+              document.addEventListener('DOMContentLoaded', function() {
+                const tabButtons = document.querySelectorAll('.tab-btn');
+                
+                tabButtons.forEach(button => {
+                  button.addEventListener('click', function() {
+                    // Remove active class from all buttons and content
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                      content.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                  });
+                });
+              });
+            </script>
+
+<!-- contact section -->
+        <section class="contact-section">
+
+      <div class="contact-container" >
+              <div class="row"><h1 class="cont" >Contact Us</h1>
+      <div class="contact-box">
+              <h2><i class="bi bi-geo-alt-fill"></i> SUNBEAM MARKET YARD PUNE</h2>
+              <p class="address">'Sunbeam Chambers', Plot No.R/2, Market Yard Road, Behind Hotel Fulora, Gultekdi,<br>
+                Pune - 411 037. MH-INDIA.</p>
+              <div class="contact-info">
+                <p><i class="bi bi-telephone"></i>+91 82 82 82 9806</p>
+                <p><i class="bi bi-envelope"></i> scc@sunbeaminfo.in</p>
+              </div>
+            </div>
+
+              <div class="contact-box">
+              <h2><i class="bi bi-geo-alt-fill"></i> SUNBEAM HINJAWADI PUNE</h2>
+              <p class="address">"Sunbeam IT Park", Second Floor, Phase 2 of Rajiv Gandhi Infotech Park, Hinjawadi,<br>
+                Pune - 411057, MH-INDIA.</p>
+              <div class="contact-info">
+                <p><i class="bi bi-telephone"></i> +91 82 82 82 9806</p>
+                <p><i class="bi bi-envelope"></i> scc@sunbeaminfo.in</p>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+      
+   <!-- Footer -->
+          <div class="footer-bar">
+            <div class="container d-flex justify-content-between align-items-center flex-wrap">
+              <div class="text-white small">
+                Sunbeam. © 2025. All Rights Reserved.
+              </div>
+              <div class="footer-links small">
+                <a href="https://mail.google.com/mail/u/0/?pli=1#inbox">Webmail</a> |
+                <a href="#">FAQs</a> |
+                <a href="#">Sitemap</a> |
+                <a href="#">Privacy</a>
+              </div>
+              <div class="text-white small">
+                Powered by <strong style="color: white;">authlinQ</strong>
+              </div>
+            </div>
+          </div>
+
+            <!-- Bootstrap JS Bundle -->
+            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+          </body>
+          </html>
+
+    </div>
+  </div>
+</body>
+</html>

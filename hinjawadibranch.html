@@ -1,29 +1,26 @@
-            <!DOCTYPE html>
-            <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Hinjawadi</title>
+     <link rel="icon" href="new_logo.png">
+</head>
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-            <head>
-                <meta charset="UTF-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title> Sunbeam</title>
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
 
-                <!-- Bootstrap & Icons -->
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet" />
-               <link rel="icon" href="new_logo.png">
-                <style>
-                   
-                    /* body */
-                        body {
-                      margin: 0;
-                      font-family: Arial, sans-serif;
-                      background-color: white;
-                      padding: 0;
-                      box-sizing: border-box;
-                      width: 100%;
-                    }
-
-                  
-                  /* Topbar */
+   /* Topbar */
                      .topbar {
                         background-color: #004080;
                         color: white;
@@ -80,7 +77,6 @@
 
     .navbar a {
       color: white;
-      /* background-color: #004a7c; */
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
@@ -227,27 +223,19 @@
       color: white;
       margin: 0 5px;
     }
-                   /* Main Body */
-                    body {
-                        font-family: Arial, sans-serif;
-                        margin: 0px;
-                        padding: 0;
-                        background-color: white;
-                    }
 
                     /* Main Text  */
                     .main-container {
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
-                        padding: 20px;
+                        padding: 10px;
                     }
 
                     .about-section {
                         margin-top: 10px;
-                        /* flex: 2; */
                         padding-right: 20px;
-                        padding-left: 20px;
+                        padding-left: 10px;
                     }
                     .about-text {
                         margin-top: 20px;
@@ -262,23 +250,20 @@
                         margin-bottom: 20px;
                     
                     }
-                    /* Main text image */
-                    .new_images img {
-                        width: 60%; 
-                        height: auto;
-                        display: block;
-                        margin: 0 auto;
+                    .card{
+                      width: 380px;
+                      padding: auto;
                     }
                     /* Sidebar */
                      .card1 {
-      width: 40px;
-      height: 600px;
+      width: 350px;
+      height: 500px;
       position: relative;
       border-radius: 15px;
       overflow: hidden;
       color: white;
       font-family: Arial, sans-serif;
-      /* margin: 30px; */
+      margin: 10px;
     }
     .card1::before {
       content: "";
@@ -345,11 +330,10 @@
   cursor: pointer;
   border-left: 4px solid #004a7c;
   padding: 18px;
-  width: 100%;
+  width: 80%;
  max-width: 830px;
   background-color: #fff;
  margin: auto;
-  width: 100%;
   border: 1px solid #ccc;
   transition: 0.4s;
   padding-bottom: 10px;
@@ -373,9 +357,14 @@
        border: 1px solid #ccc;
        border: 1px solid #ccc;
        margin-left: 50px;
-       width: 94%;
+       width: 80%;
        margin-right: 100px;
 }
+ iframe {
+      border: 0;
+      width: 100%;
+      height: 300px;
+    }
 
  .image-row {
       display: flex;
@@ -431,13 +420,23 @@ td {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
-  /* Contact-section */
+
+                      /* Contact-section */
                         .contact-section {
                         background: #0f3b5c url('bg-pattern.png'); /* replace bg-pattern.png if you want */
                         color: white;
                         padding: 40px 20px;
                         margin-top: 10px;
-                    }
+
+                          top: 0;                      
+                          left: 0;                      
+                          /* width: 100vw;                 */
+                          background-size: cover;      
+                       
+                          
+                        
+                          /* overflow: auto;                */
+                                            }
 
                     .contact-container {
                         display: flex;
@@ -487,13 +486,15 @@ tr:nth-child(even) {
                     }  
   
 
-/* footer */
 
-    .footer-bar {
+        .footer-bar {
   background-color: #004476;
   padding: 10px 20px;
   font-family: 'Segoe UI', sans-serif;
   font-size: 0.9rem;
+   top: 0;                      
+                          left: 0;                      
+                          /* width: 100vw;    */
 }
 
 .footer-bar a {
@@ -505,12 +506,12 @@ tr:nth-child(even) {
 .footer-bar a:hover {
   text-decoration: underline;
 }
-                </style>
-            </head>
 
-            <body>
-                    
-                 <!-- Top contact bar -->
+</style>
+<body>
+
+
+    <!-- Top contact bar -->
                 <div class="topbar text-end">
                     <i class="bi bi-telephone"></i> Pune | Karad: +91 82 82 82 9806
                 </div>
@@ -625,223 +626,102 @@ tr:nth-child(even) {
     <a href="testimonials.html">TESTIMONIALS</a>
     <a href="infrastucture.html">INFRASTRUCTURE</a>
     <a href="P_contact.html">CONTACT US</a>
-
    </div>
    <!-- Banner -->
   <div class="contact">
-                    <h4>INTERNSHIP</h4>
+                    <h4>ABOUT US</h4>
                     <p><a href="P_Homepage.html"> Home</a> &gt;
-                      <a href="#"> Internship</a></p>
+                      <a href="P_About_us.html"> About Us</a> &gt;
+                      <a href="infrastucture.html"> Home</a> &gt;
+                      <a href="#"> Branch Details Pune - Hinjawadi</a></p>
                 </div>
 
-                <!-- <body> -->
+
+
+
+
+
+
+                  <!-- <body> -->
                     <div class="main-container">
                         <div class="about-section">
-                              <h5>INTERNSHIP</h5>
+                              <h5>SUNBEAM INSTITUTE OF INFORMATION TECHNOLOGY, PUNE - HINJAWADI</h5>
                             <hr class="dashed-line">
+                              <h5>Overview :</h5>
                             <div class="about-content">
-                          <div class="new_images">
-    <img src="internships.png" alt="internship_img">
-</div>
+                         <div class="d-flex gap-3">
+        <img src="s-1.jpg" alt="Campus" style="height: 120px; width: auto; border: 2px solid skyblue;" />
+        <img src="s-2.jpg" alt="Hallway" style="height: 120px; width: auto; border: 2px solid skyblue;" />
+        <img src="s-3.jpg" alt="Classroom" style="height: 120px; width: auto; border: 2px solid skyblue;" />
+        
+      </div>
      
                 <p class="about-text">
-                    GET EXPERIENCE BEFORE YOU GRADUATE<br>
-It is really difficult to sustain competitive edge of an industry. No matter you are an employer, 
-employee or an entrepreneur.<br><br>
-
-Technology, innovations and business trends has added diversified change to the organizational process. 
-Individual should acquire proficiency, mainly in technical and develop personal skills to adapt these 
-industry dynamics.<br><br>
-
-We at Sunbeam are known for providing IT training, solutions, and services. Our training approach 
-contemplate our students to take a wise decision and distinguish Sunbeam as elite institute. Our innovative 
-training methods, use of adequate technology, and emphasis on specific program adds value to success of Sunbeam.<br><br>
-
-Team at Sunbeam is young, energetic, and committed. Our team can nurture strong technical foundation
- and build the most progressive career of a candidate in the Industry. Team Sunbeam will challenge and 
- will definitely inspire you. Spend your good time with our team and it will definitely change your life.<br><br>
+                  The Sunbeam campus at Rajiv Gandhi Infotech Park, Hinjawadi is spread over an area of 1 Acre 
+        which includes 70,000 sq feet of built-up area and 5-floor building for C-DAC courses.<br><br>
+        The teaching-learning process is facilitated in 3 lecture halls, 5 computer labs with high-speed Internet connectivity,
+        a seminar room, conference room, library. The entire sunbeam campus is Wi-Fi enabled. Sunbeam also provides hostel facility to girls.
+        The construction of a Hinjewadi branch has been completed and the AUG 2019 batches have started in a new building.
+      </p>
                 </p>
            
 <!--    accordion   -->
-        
-               <button class="accordion">Student Industrial Training & Internship</button>
+    <button class="accordion">Location</button>
 <div class="panel">
-  <div class="image-row">
-<img src="IT1.jpeg" alt="image1">
-   <img src="IT2.jpeg" alt="image1">
-    <img src="IT3.jpeg" alt="image1">
-  </div>
-  <p>At Sunbeam, we recognize the importance of practical experience in shaping the careers of aspiring professionals.
-     Our industrial training and internship programs provide students with the opportunity to gain hands-on technology, develop valuable skills,
-      and explore their interests in various fields. We offer flexible durations of 1 month, 2 months, and 6 months Internship Program to 
-      accommodate the needs and schedules of students.<br><br>
-
-If you're looking for a short-term immersion or a more extensive exploration, our programs offer a blend of training, projects,
- under the guidance of project mentors which will enhance skills and career prospects of a candidate.</p>
+  <div class="d-flex gap-3">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.8666665360124!2d73.86446757415142!3d18.489697770118664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c01f3787714f%3A0x82eaed4cfca0afde!2sSunbeam!5e0!3m2!1sen!2sin!4v1750324499541!5m2!1sen!2sin" 
+   width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  
+      </div>
+</div>
+<button class="accordion">Gallary</button>
+<div class="panel">
+  <div class="d-flex gap-3">
+        <img src="s-1.jpg" alt="Campus" style="height: 80px; width: auto; border: 2px solid skyblue;" />
+        <img src="s-2.jpg" alt="Hallway" style="height: 80px; width: auto; border: 2px solid skyblue;" />
+        <img src="s-3.jpg" alt="Classroom" style="height: 80px; width: auto; border: 2px solid skyblue;" />  
+      </div>
 </div>
 
-<button class="accordion">Training And Industrial Program Features</button>
-<div class="panel">
-    <div class="image-row">
-<img src="TI.jpg" alt="image1">
-   <img src="TI2.jpeg" alt="image1">
-    <img src="TI3.jpeg" alt="image1">
-  </div>
-  <p><b><i class="bi bi-check-circle-fill"></i> Hands-On Experience -</b> Practical learning through project-based activities aligned with industry standards.<br>
-<b><i class="bi bi-check-circle-fill"></i> Structured Training -</b> Receive comprehensive training sessions tailored to the duration and focus area of the internship.<br>
-<b><i class="bi bi-check-circle-fill"></i> Project Development - </b>Work on mini and elaborative project using conceptual knowledge for real-world scenarios.<br>
-<b><i class="bi bi-check-circle-fill"></i> Mentorship -</b> Guidance from experts throughout the internship period.<br>
-<b><i class="bi bi-check-circle-fill"></i> Evaluation and Feedback -</b> Participate in regular review meetings via Zoom for project evaluation and feedback.<br>
-<b><i class="bi bi-check-circle-fill"></i> Reporting -</b> Project Evaluation Report will be shared with the respective college where candidate is from. In case candidate joins this
- program directly without any reference of college in such case report will be shared directly to the candidate.</p>
-</div>
+  </div>  
+        </div>
+      <div class="col-md-4 d-flex flex-column align-items-start">
+<div class="card " style="border-radius: 10px; padding-top: 0;">
+        <div class="card-header text-white" style="background-color: #140a9c; border-radius: 10px 10px 0 0;">
+          BRANCHES
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <a href="#" class="text-dark text-decoration-none">Pune - Market Yard</a>
+          </li>
+          <li class="list-group-item">
+            <a href="hinjawadibranch.html" class="text-dark text-decoration-none">Pune - Hinjawadi</a>
+          </li>
+        </ul>
+      </div>
 
-<button class="accordion">Placements</button>
-<div class="panel">
-    <div class="PPP">
-<img src="placement-preparation-programme.jpg" alt="image1">
-    </div>
-    
-  <p><i class="bi bi-check-circle-fill"></i> 
-     We help students prepare for the Campus Placement Programme. The PPP is a training module to improve the student’s employability skills.
-  </p>
-</div>
-
-<button class="accordion">Benefits Of Program</button>
-<div class="panel">
-   <p><i class="bi bi-check-circle-fill"></i> Gain practical skills and industry exposure.<br>
-<i class="bi bi-check-circle-fill"></i> Enhance your resume with hands-on project experience.<br>
-<i class="bi bi-check-circle-fill"></i> Receive guidance and mentorship from industry experts.<br>
-<i class="bi bi-check-circle-fill"></i> Be a part of a network with professionals and peers in specific field.<br>
-<i class="bi bi-check-circle-fill"></i> Earn a certificate upon successful completion of the program.<br>
-
-<h5>SUNBEAM TECHNOLOGY OFFERINGS FOR STUDENTS</h5>
-
-At Sunbeam, we offer a wide range of technology programs tailored to the needs of students in computer science, 
-information technology, and electronics. Each program aims to equip students with practical skills and knowledge essential 
-for their career growth. Below is a detailed list of the technologies we provide, along with their respective locations:</p>
-</div>
-
-
-
-<button class="accordion">Our associates</button>
-<div class="panel">
-   
+      <br>
 
   
-  <p></p>
-</div>
 
-<button class="accordion">Available Internship Programs</button>
-<div class="panel">
-  <p></p>
-</div>
-
-
-                  
- <!-- Table -->
-<div div style="overflow-x:auto;">
-             <table>
-    <tr>
-      <th>Sr.No</th>
-      <th>Batch</th>
-      <th>Batch Duration</th>
-      <th>Start Date</th>
-      <th>End Date</th>
-      <th>Time</th>
-      <th>Fee(Rs.)</th>
-      <th>Download Brochure</th>
-      
-    </tr>
-    <tr>
-      <td>1 </td>
-      <td>IIT-06-K-A-.net</td>
-      <td>1 Month</td>
-      <td>02-Jun-2025</td>
-      <td>30-Jun-2025</td>
-      <td>8:00 AM To 1:00 PM</td>
-      <td>5000/-</td>
-      <td></td>
-     
-    </tr>
-    <tr>
-     <td>2 </td>
-      <td>IIT-06-H-A-Python Web Development</td>
-      <td>1 Month</td>
-      <td>02-Jun-2025</td>
-      <td>30-Jun-2025</td>
-      <td>8:00 AM To 1:00 PM</td>
-      <td>5000/-</td>
-      <td></td>
-    </tr>
-    <tr>
-     <td>3 </td>
-      <td>IIT-06-H-A-Web Programming with Node.js</td>
-      <td>1 Month</td>
-      <td>02-Jun-2025</td>
-      <td>30-Jun-2025</td>
-      <td>8:00 AM To 1:00 PM</td>
-      <td>5000/-</td>
-      <td></td>
-    </tr>
-     <tr>
-     <td>4</td>
-      <td>IIT-06-H-A-CoreJava</td>
-      <td>1 Month</td>
-      <td>02-Jun-2025</td>
-      <td>30-Jun-2025</td>
-      <td>8:00 AM To 1:00 PM</td>
-      <td>5000/-</td>
-      <td></td>
-    </tr>
-     <tr>
-     <td>5 </td>
-      <td>IIT-06-H-A-DataScience(ML)</td>
-      <td>1 Month</td>
-      <td>02-Jun-2025</td>
-      <td>30-Jun-2025</td>
-      <td>8:00 AM To 1:00 PM</td>
-      <td>6000/-</td>
-      <td></td>
-    </tr>
-     <tr>
-     <td>6 </td>
-      <td>IIT-06-K-A-Web Programming with Node.js</td>
-      <td>1 Month</td>
-      <td>02-Jun-2025</td>
-      <td>30-Jun-2025</td>
-      <td>8:00 AM To 1:00 PM</td>
-      <td>5000/-</td>
-      <td></td>
-    </tr> <tr>
-     <td>7 </td>
-      <td>IIT-06-H-A-Generative AI</td>
-      <td>1 Month</td>
-      <td>02-Jun-2025</td>
-      <td>30-Jun-2025</td>
-      <td>8:00 AM To 1:00 PM</td>
-      <td>6000/-</td>
-      <td></td>
-    </tr>
-  </table>
-            </div>
-        </div>
-
-        </div>
-
-  <!-- Registration Card -->
-  <div class="card1 w-100">
+<!-- Registration Card -->
+  <div class="card1 ">
     <div class="card1-content d-flex flex-column justify-content-center align-items-center">
       <h2><b>Courses</b></h2>
        <a href="course_schedule.html">
-                          <button type="button" class="btn btn-light" style="color:rgb(13, 203, 236);">View Course schedule </button>
+                          <button type="button" class="btn btn-light" style="color:rgb(13, 203, 236);">View Course Schedule</button>
                         </a>
     </div>
   </div>
+       </div>          
+ 
 </div>
 
 
- <!-- Last Contact-section -->
+
+
+
+<!-- Last Contact-section -->
               <section class="contact-section">
 
 <div class="contact-container">
@@ -867,7 +747,10 @@ for their career growth. Below is a detailed list of the technologies we provide
       </div>
     </div>
     </div>
-                      </section>
+ </section>
+
+
+
   <!-- Footer -->
 <div class="footer-bar">
   <div class="container d-flex justify-content-between align-items-center flex-wrap">
@@ -887,9 +770,10 @@ for their career growth. Below is a detailed list of the technologies we provide
 </div>
 
   
-     <script src="accordation.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
+
+    <script src="accordation.js"></script>
 </body>
 </html>
-
-                
-            
