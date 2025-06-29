@@ -1,83 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sunbeam Web Page</title>
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+            <!DOCTYPE html>
+            <html lang="en">
 
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+            <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Sunbeam</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+                <!-- Bootstrap & Icons -->
+                 <!-- CSS -->
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+              <!-- Icons -->
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet" />
+                <!-- Corousal -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+               <link rel="icon" href="new_logo.png">
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f2f2f2;
-    }
+                <style>
+                    /* Topbar */
+                     .topbar {
+                        background-color: #004080;
+                        color: white;
+                        font-size: 0.9rem;
+                        padding: 5px 20px;
+                    }
+                    /* Header */
+                      header {
+                        background-color: white;
+                        padding: 10px 20px;
+                    }
 
-    .top-bar {
-      background-color: #004a7c;
-      color: white;
-      padding: 5px 20px;
-      font-size: 14px;
-      text-align: right;
-    }
+                    header img {
+                        height: 60px;
+                    }
+                    .header-right .btnn{
+                        background-color: #004080;
+                        color: white;
+                        font-weight: bold;
+                        border: 2px solid skyblue;
+                        height: 38px;
+                        padding: 0 12px;
+                        display: flex;
+                        align-items: center;
+                        white-space: nowrap;
+                    }
 
-    .header {
-      background-color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      border-bottom: 2px solid #004a7c;
-    }
- /* logo*/
+            .social-icon {
+                font-size: 1rem;
+                width: 38px;
+                height: 38px;
+                background-color: #007bff;
+                color: white;
+                border: 1px solid white;
+                text-align: center;
+                display: inline-flex;
+                align-items: center;
+                background-color: #007bff;
+                justify-content: center;
+            }
+                   
+                    .social-icon:hover {
+                        background-color: #0056b3;
+                    }
 
-    .logo img {
-      height: 60px;
-    }
+                  
 
-    .actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
 
-     /* regester button*/
-    .register-btn {
-      padding: 6px 12px;
-      background-color: #007dc5;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      text-decoration: none;
-    }
 
- /* icons */
-
-    .icons {
-      display: flex;
-      gap: 10px;
-    }
-
-    .icons i {
-      color: white;
-      background-color: #007dc5;
-      padding: 6px;
-      border-radius: 50%;
-    }
-
-    /* navbar */
-
-    .navbar {
+       .navbar {
       background-color: #004a7c;
       display: flex;
       justify-content: center;
@@ -87,6 +77,7 @@
 
     .navbar a {
       color: white;
+      /* background-color: #004a7c; */
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
@@ -115,6 +106,7 @@
       padding: 15px;
       border-radius: 5px;
       color: #333;
+      margin-left: 100px;
     }
 
     .dropdown-content.about {
@@ -205,131 +197,498 @@
       border: 3px solid #900;
     }
 
-    /* announcement bar */
 
-    .announcement-bar {
-      background-color: #1e5c70;
-      color: #fefefe;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-    }
 
-    .announcement-bar .label {
-      background-color: #154d5c;
-      color: #fffacd;
-      padding: 0 15px;
-    }
 
-    /* marquee*/
+                    .geek2 {
+                        font-size: 20px;
+                        font-weight: bold;
+                        color: whitesmoke;
+                    }
 
-    .marquee-text {
-      color: #fffacd;
-      padding-left: 20px;
-    }
+                    footer {
+                        background-color: #007bff;
+                        color: white;
+                        text-align: center;
+                        padding: 10px 0;
+                    }
+                    .announcement-bar {
+                background-color: #1e5c70;  /* Outer background */
+                height: 40px;
+                color: #fefefe;
+                font-weight: bold;
+            }
 
-   /* cards */
-    .stats-wrapper {
-      background-color: #003366;
-      padding: 60px 20px;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
+            .announcement-bar .label {
+                background-color: #154d5c;  /* Darker box for 'ANNOUNCEMENTS' */
+                height: 100%;
+                color: #fffacd;
+                font-size: 16px;
+                white-space: nowrap;
+            }
 
-    .stats-card {
-      background-color: #00bfff;
-      color: white;
+            .marquee-text {
+                color: #fffacd;
+                padding-left: 20px;
+                font-size: 16px;
+            }
+
+
+
+/* Main body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fa; /* Light background for the overall page */
+}
+.container_cards{
+    background-color: #003366;
+}
+.new-card{
+      background-color:#89CFF0;
       text-align: center;
-      padding: 30px 15px;
-      border-radius: 8px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-      margin: 15px 0;
+      padding-top: 100px;
+      margin: 50px;
+      height: 300px;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      color: beige;
     }
 
-    .courses-section {
-      background-color: #f0f0f0;
-      padding: 50px 0;
+
+/* --- Courses Section Title --- */
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: normal;align-items: center;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* --- Course Cards Section --- */
+.course-cards-container {
+    display: flex;
+    justify-content: center; /* Center the cards */
+    flex-wrap: wrap; /* Allow cards to wrap */
+    gap: 25px; /* Space between cards */
+}
+
+.course-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    width: 280px; /* Fixed width for cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.course-card .icon {
+    width: 80px; /* Adjust icon size */
+    height: 80px;
+    margin: 0 auto 20px; /* Center the icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2); /* Light background for icon circle */
+}
+
+.course-card .icon img {
+    max-width: 60%;
+    max-height: 60%;
+    filter: invert(100%); /* Make icons white if they are dark */
+}
+
+.course-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.course-card p {
+    font-size: 1.1em;
+    color: white;
+    opacity: 0.8;
+    flex-grow: 1; /* Allows paragraph to take available space */
+    margin-bottom: 25px;
+}
+
+.course-card .view-more-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: auto; /* Push button to the bottom */
+}
+
+.course-card .view-more-btn:hover {
+    background-color: white;
+    color: inherit; /* Inherit color from parent for specific card colors */
+}
+
+.course-card .view-more-btn .arrow {
+    margin-left: 8px;
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+.course-card.orange {
+    background-color: #ff6f00; /* Bright Orange */
+}
+
+
+.course-card.blue {
+    background-color: #3f51b5; /* Medium Blue */
+}
+.course-card.blue .view-more-btn:hover {
+    color: #3f51b5;
+}
+
+.course-card.red {
+    background-color: #e53935; 
+}
+.course-card.red .view-more-btn:hover {
+    color: #e53935;
+}
+
+.course-card.dark-blue {
+    background-color: #1976d2; /* Darker Blue */
+}
+.course-card.dark-blue .view-more-btn:hover {
+    color: #1976d2;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .stats-cards-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 15px;
+    }
+
+    .stat-card {
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .course-cards-container {
+        flex-direction: column;
+        align-items: center;
     }
 
     .course-card {
-      min-height: 250px;
-      text-align: center;
-      color: white;
-      padding: 20px;
-      border-radius: 8px;
+        width: 90%; /* Adjust width for smaller screens */
+        max-width: 350px; /* Max width to prevent cards from becoming too wide */
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-card h2 {
+        font-size: 2.5em;
     }
 
-    .course-orange { background-color: #f4621f; }
-    .course-blue { background-color: #003366; }
-    .course-red { background-color: #e63946; }
-
-    .btn-view {
-      background-color: white;
-      color: black;
-      font-weight: bold;
-      border: none;
-      margin-top: 10px;
+    .stat-card p {
+        font-size: 1em;
     }
 
-    
-       /* footer */
-
-    .footer {
-      background-color: #0d2842;
-      color: white;
-      padding: 40px 20px;
+    .course-card h3 {
+        font-size: 1.3em;
     }
 
-    .footer a {
-      color: white;
-      text-decoration: none;
+    .course-card p {
+        font-size: 1em;
     }
 
-    .footer a:hover {
-      text-decoration: underline;
+    .course-card .icon {
+        width: 70px;
+        height: 70px;
+    }
+}
+                .container_card {
+                    display: flex;
+                gap: 30px;
+                justify-content: center;
+                
+                background-color:#154d5c;
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+               
+            
+            }
+                .card {
+                margin: 20px;
+                width: 18rem;
+                height: 12rem;
+                display: flex; 
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                text-decoration-color: whitesmoke;
+                background-color: #004080;
+            }
+                    .card-body {
+                        text-align: center;
+                        background-color: rgb(0, 128, 255);
+                        padding: 20px;
+                    }
+
+                    .card-title {
+                        font-size: 50px;
+                        font-weight: bold;
+                        color: whitesmoke;
+                        align-items: center;
+                    }
+
+                    .card-text {
+                        font-size: 16px;
+                        color: whitesmoke;
+
+                        margin-top: 10px;
+                        
+                    }
+
+                    .h4 {
+                        text-align: center;
+                        margin-top: 20px;
+                        color: black;
+                        font-size: 15px;              
+                    }
+                    
+                   
+
+                    .course-card1
+                    {
+                        background-color: orange;
+                        color: white;
+                        padding: 30px 20px;
+                        width: 250px; /* Equal width */
+                        height: 300px; /* Equal height */
+                        
+                        text-align: center;
+                        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+                        /* transition: transform 0.3s; */
+                    }
+                    .course-card2 {
+                        background-color: rgb(102, 0, 255);
+                        color: white;
+                        padding: 30px 20px;
+                        width: 250px; /* Equal width */
+                        height: 300px; /* Equal height */
+                        
+                        text-align: center;
+                        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+                    }
+
+                    .course-card3 {
+                        background-color: rgb(255, 30, 0);
+                        color: white;
+                        padding: 30px 20px;
+                        width: 250px; /* Equal width */
+                        height: 300px; /* Equal height */
+                        
+                        text-align: center;
+                        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+                    }
+
+                    .course-card4 {
+                        background-color: rgb(0, 0, 255);
+                        color: white;
+                        padding: 30px 20px;
+                        width: 250px; /* Equal width */
+                        height: 300px; /* Equal height */
+                        text-align: center;
+                        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+                    }
+                    .course-card .h4 {
+                        font-size: 15px;
+                        margin: 10px 0;
+                    }
+
+                    .course-card p {
+                        font-size: 16px;
+                    }
+                   
+                    .button-row {
+                    display: flex;
+                    justify-content: center;  
+                    align-items: center;
+                    gap: 20px;
+                    margin-top: 30px;
+                    flex-wrap: wrap; 
+                    }
+                    .icon{
+                        color: whitesmoke;
+                    }
+
+.view-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  color: white;
+  border: 1px solid white;
+  background: transparent;
+ 
+}
+
+
+
+                    .btn4 {
+                        margin-top: 20px;
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: nowrap;
+                    } 
+                    .icon {
+                        width: 50px; /* Adjust icon size */
+                        height: 50px;
+                        
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        background-color: rgba(255, 255, 255, 0.2); /* Light background for icon circle */
+                    }
+
+                    .text_box {
+                        background-color: #007bff;
+                        color: white;
+                        padding: 20px;
+                        text-align: center;
+                        margin-top: 40px;
+                    }
+                    .text_box h2 {
+                        font-size: 24px;
+                        margin-bottom: 10px;
+                    }
+
+                    .contact-section {
+                        background: #0f3b5c url('bg-pattern.png'); /* replace bg-pattern.png if you want */
+                        color: white;
+                        padding: 40px 20px;
+                        margin-top: 10px;
+                    }
+
+                    .contact-container {
+                        display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .website-ref {
-      background-color: #003366;
-      text-align: center;
-      padding: 15px;
-      color: white;
+    .contact-box {
+      flex: 1 1 400px;
+      margin: 20px;
     }
-
-    .icon-img {
-      height: 60px;
+   .cont{
+        padding-left: 25px;
+    }
+    .contact-box h2 {
+      font-size: 22px;
       margin-bottom: 10px;
     }
-  </style>
-</head>
-<body>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    Pune | Karad: +91 82 82 82 9806
-  </div>
+    .contact-box p {
+      font-size: 16px;
+      margin: 5px 0;
+     
+    }
 
-  <!-- Header -->
-  <div class="header">
-    <div class="logo">
-      <img src="https://sunbeaminfo.com/images/logo.png" alt="Sunbeam Logo" />
-    </div>
-    <div class="actions">
-      <a href="#" class="register-btn">📝 Registration & Online Admission</a>
-      <div class="icons">
-        <i class="bi bi-facebook"></i>
-        <i class="bi bi-twitter"></i>
-        <i class="bi bi-linkedin"></i>
-        <i class="bi bi-youtube"></i>
-        <i class="bi bi-instagram"></i>
-      </div>
-    </div>
-  </div>
+    .contact-box .icon {
+      margin-right: 8px;
+    }
 
-  <!-- Navbar -->
+    .contact-info {
+      margin-top: 15px;
+    }
 
+    .contact-info p {
+      display: flex;
+      align-items: center;
+     
+    }
+    
+    .contact-info p i {
+      margin-right: 10px;
+    }  
+         
+    /* footer */
+
+    .footer-bar {
+  background-color: #004476;
+  padding: 10px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+}
+
+.footer-bar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-bar a:hover {
+  text-decoration: underline;
+}
+                </style>
+            </head>
+
+            <body>
+
+                <!-- Top contact bar -->
+                <div class="topbar text-end">
+                    <i class="bi bi-telephone"></i> Pune | Karad: +91 82 82 82 9806
+                </div>
+
+            <!-- Header --> 
+              <header class="d-flex justify-content-between align-items-center">
+                    <img src="new_logo.png" alt="Sunbeam Logo" />
+
+                  <div class="header-right d-flex align-items-center gap-2">
+                        <a href="registration_form.html">
+                          <button class="btnn" >
+                           <i class="bi bi-pencil-square"></i> Registration & Online Admission
+                        </button>
+                        </a>
+                        <a href="https://www.facebook.com/sunbeamgroup" class="social-icon" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="https://x.com/siitofficial" class="social-icon" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/sunbeam-institute-of-information-technology/" class="social-icon" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.youtube.com/channel/UCODzoBuQt0L8FtfzWhaMwoA" class="social-icon" target="_blank"><i class="bi bi-youtube"></i></a>
+                        <a href="https://www.instagram.com/siitofficial/" class="social-icon" target="_blank"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </header>
+               
   <!--  about us Navbar -->
   <div class="navbar">
     <div class="dropdown">
@@ -337,18 +696,20 @@
       <div class="dropdown-content about">
         <div class="dropdown-section blue-box">
           <ul>
-            <li><a href="#">ABOUT SUNBEAM</a></li>
-            <li><a href="#">BRANCHES</a></li>
+            <li><a href="P_About_us.html">ABOUT SUNBEAM</a></li>
+            <li><a href="infrastucture.html">BRANCHES</a></li>
           </ul>
         </div>
       </div>
     </div>
+ 
 
   <!-- courses Navbar -->
     <div class="dropdown">
       <a href="#">COURSES</a>
       <div class="dropdown-content">
         <div class="row">
+
           <div class="col-md-4">
             <div class="dropdown-section red-box">
               <h4>ENTRANCE PREPARATORY COURSES</h4>
@@ -357,6 +718,7 @@
                 <li><a href="#">Mastering MCQs</a></li>
               </ul>
             </div>
+
             <div class="dropdown-section green-box">
               <h4>INTERNSHIP</h4>
               <ul>
@@ -368,7 +730,9 @@
                 <li><a href="#">Generative AI</a></li>
               </ul>
             </div>
+
           </div>
+
           <div class="col-md-4">
             <div class="dropdown-section green-box">
               <h4>SUNBEAM CERTIFIED COURSES</h4>
@@ -392,42 +756,40 @@
               </ul>
             </div>
           </div>
+
         </div>
       </div>
     </div>
 
     <!--  admission Navbar -->
-    <a href="#">INTERNSHIP</a>
+    <a href="P_Internship.html">INTERNSHIP</a>
     <div class="dropdown">
       <a href="#">ADMISSIONS</a>
       <div class="dropdown-content admissions">
         <div class="dropdown-section blue-box">
           <ul>
-            <li><a href="#">PROCEDURES</a></li>
-            <li><a href="#">RULES</a></li>
+            <li><a href="Procedures.html">PROCEDURES</a></li>
+            <li><a href="admission_Rules.html">RULES</a></li>
             <li><a href="#">FAQS</a></li>
-            <li><a href="#">REGESTRATITION AND ONLINE ADMISSIONS</a></li>
+            <li><a href="course_schedule.html">REGESTRATITION AND ONLINE ADMISSIONS</a></li>
           </ul>
         </div>
       </div>
     </div>
-    <a href="#">TESTIMONIALS</a>
-    <a href="#">INFRASTRUCTURE</a>
-    <a href="#">CONTACT US</a>
-    <div class="dropdown">
+
+    <a href="testimonials.html">TESTIMONIALS</a>
+    <a href="infrastucture.html">INFRASTRUCTURE</a>
+    <a href="P_contact.html">CONTACT US</a>
+   <!-- <a href="nextpage.html" class="btn btn-primary">Previous</a> -->
+
 
       <!-- login Navbar -->
-
+     <div class="dropdown">
       <a href="#">LOGIN</a>
       <div class="dropdown-content login">
         <div class="dropdown-section blue-box">
           <ul>
-            
-            <!-- <li><a href="login_form.html"><i class="bi bi-person-circle"></i> User Profile</a></li>
-            <li><a href="#"><i class="bi bi-key"></i> Change Password</a></li>
-            <li><a href="#"><i class="bi bi-list-check"></i> Show Enrollments</a></li>
-            <li><a href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li> -->
-
+         
               <li><a href="login_form.html"><i class="bi bi-person-circle"></i> Show all students</a></li>
             <li><a href="#"><i class="bi bi-key"></i> Add new course</a></li>
             <li><a href="#"><i class="bi bi-list-check"></i> Add new Batch</a></li>
@@ -439,126 +801,203 @@
     </div>
   </div>
 
-  
-  <!-- Carousel -->
-  <div id="carouselExample" class="carousel slide">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="i1.png" class="d-block w-100" alt="Slide 1">
-      </div>
-      <div class="carousel-item">
-        <img src="i2.png" class="d-block w-100" alt="Slide 2">
-      </div>
-      <div class="carousel-item">
-        <img src="i3.png" class="d-block w-100" alt="Slide 3">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+   </div>
 
-  <!-- Announcement Bar -->
-  <div class="announcement-bar">
-    <div class="label"><i class="bi bi-megaphone-fill me-2"></i> ANNOUNCEMENTS</div>
-    <marquee behavior="scroll" direction="left" scrollamount="5" class="marquee-text">
-      <i class="bi bi-diamond-fill me-2"></i> PreCAT batches are open for Registration
-      &nbsp;&nbsp;<i class="bi bi-diamond-fill me-2"></i> SunBeam Certified Courses
-    </marquee>
-  </div>
+                
+            <!-- Carousel -->
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
 
-  <!-- Stats -->
-  <div class="stats-wrapper">
-    <div class="stats-card">
-      <h2>25+</h2>
-      <p>Years of Experience in Education</p>
-    </div>
-    <div class="stats-card">
-      <h2>50000+</h2>
-      <p>Students & Professionals trained</p>
-    </div>
-    <div class="stats-card">
-      <h2>120+</h2>
-      <p>Recruiters & Placements</p>
-    </div>
-  </div>
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                <img src="11.png" class="d-block w-100" alt="Slide 1">
+                <div class="carousel-caption d-none d-md-block text-start">
+                    
+                    <h4> </h4>
+                    <p> </p>
+                    
+                </div>
+                </div>
 
-  <!-- Courses -->
-  <div class="courses-section container text-center">
-    <h3 class="mb-5">COURSES</h3>
-    <div class="row g-4">
-      <div class="col-md-3">
-        <div class="course-card course-orange">
-          <img src="i3.png" class="icon-img" />
-          <div class="course-title">Entrance Preparatory Courses</div>
-          <div class="course-subtitle">Pre-CAT</div>
-          <button class="btn btn-view">VIEW MORE ⓘ</button>
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                <img src="1.png" class="d-block w-100" alt="Slide 2">
+                <div class="carousel-caption d-none d-md-block text-start">
+                    
+                    <h4> </h4>
+                    <p> </p>
+                
+                </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                <img src="3.jpg" class="d-block w-100" alt="Slide 3">
+                <div class="carousel-caption d-none d-md-block text-start">
+                    
+                    <h4></h4>
+                    <p ></p>
+                    
+                </div>
+                </div>
+
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            </div>
+
+
+                <!-- Announcement Marquee -->
+                <div class="announcement-bar d-flex align-items-center">
+                    <div class="label d-flex align-items-center px-3">
+                        <i class="bi bi-megaphone-fill me-2"></i> ANNOUNCEMENTS
+                    </div>
+                    <marquee behavior="scroll" direction="left" scrollamount="5" class="marquee-text">
+                        <i class="bi bi-diamond-fill me-2"></i> PreCAT batches are open for Registration &nbsp;
+                    <i class="bi bi-diamond-fill me-2"></i> SunBeam Certified Courses &nbsp;
+                </marquee>
+                </div>
+
+                <!-- First Div for 3 cards -->
+                <div class="container_cards">
+                    <div class="d-flex justify-content-start gap-5 " >
+  <div class="new-card" style="width: 18rem;">
+  <div class="card1">
+    <h1 class="card-title"><b>25+</b></h1>
+    <p class="card-text"><b>Years of Experience in Education</b></p>
+    
+  </div></div>
+
+  <div class="new-card" style="width: 18rem;">
+  <div class="card2">
+    <h1 class="card-title"><b>50000+</b></h1>
+    <p class="card-text"><b>Students & Professionals <br>trained so far here</b></p>
+    
+  </div></div>
+
+  <div class="new-card" style="width: 18rem;">
+  <div class="card3">
+    <h1 class="card-title"><b>120+</b></h1>
+    <p class="card-text"><b>Recruiters and Placements</b></p>
+    
+  </div>
+</div>
+</div>
+</div>
+
+
+
+<!-- Courses section -->
+    <h4 class="section-title">COURSES</h4>
+
+    <div class="course-cards-container">
+        <div class="course-card orange">
+            <div class="icon">
+                <img src="entrance.png" alt="Entrance Preparatory Courses Icon">
+            </div>
+            <h3>Entrance Preparatory Courses</h3>
+            <p>Pre-CAT</p>
+            <div class="btn4">
+                <button type="button" class="btn btn-outline-light">VIEW MORE <i class="bi bi-arrow-right-circle"></i></button>
+            </div>
+        </div>
+
+        <div class="course-card blue">
+            <div class="icon">
+                <img src="sbcer.png" alt="SunBeam Certified Courses Icon">
+            </div>
+            <h3>SunBeam Certified Courses</h3>
+            <p>Core Java</p>
+            
+            <div class="btn4">
+                 <button type="button" class="btn btn-outline-light">VIEW MORE <i class="bi bi-arrow-right-circle"></i></button>
+            </div>
+
+            
+        </div>
+
+        <div class="course-card red">
+            <div class="icon">
+                <img src="courseprep.png" alt="Campus Preparation Courses Icon">
+            </div>
+            <h3>Campus Preparation Courses</h3>
+            <p>Mastering MCQs</p>
+           <div class="btn4">
+                  <button type="button" class="btn btn-outline-light">VIEW MORE <i class="bi bi-arrow-right-circle"></i></button>
+           </div>
+        </div>
+
+        <div class="course-card dark-blue">
+            <div class="icon">
+                <img src="internship.png" alt="Internship Icon">
+            </div>
+            <h3>Internship</h3>
+            <p>Generative AI</p>
+            <div class="btn4">
+                 <button type="button" class="btn btn-outline-light">VIEW MORE<i class="bi bi-arrow-right-circle"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+        
+
+<!-- Contact Section -->
+                      <section class="contact-section">
+
+<div class="contact-container">
+        <div class="row"> <h1 class="cont">Contact Us</h1>
+ <div class="contact-box">
+        <h2><i class="bi bi-geo-alt-fill"></i> SUNBEAM MARKET YARD PUNE</h2>
+        <p class="address">'Sunbeam Chambers', Plot No.R/2, Market Yard Road, Behind Hotel Fulora, Gultekdi,<br>
+           Pune - 411 037. MH-INDIA.</p>
+        <div class="contact-info">
+          <p><i class="bi bi-telephone"></i>+91 82 82 82 9806</p>
+          <p><i class="bi bi-envelope"></i> scc@sunbeaminfo.in</p>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="course-card course-blue">
-          <img src="i4.png" class="icon-img" />
-          <div class="course-title">SunBeam Certified Courses</div>
-          <div class="course-subtitle">Core Java</div>
-          <button class="btn btn-view">VIEW MORE ⓘ</button>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="course-card course-red">
-          <img src="i5.png" class="icon-img" />
-          <div class="course-title">Campus Preparation Courses</div>
-          <div class="course-subtitle">Mastering MCQs</div>
-          <button class="btn btn-view">VIEW MORE ⓘ</button>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="course-card course-blue">
-          <img src="i6.png" class="icon-img" />
-          <div class="course-title">Internship</div>
-          <div class="course-subtitle">Generative AI</div>
-          <button class="btn btn-view">VIEW MORE ⓘ</button>
+
+        <div class="contact-box">
+        <h2><i class="bi bi-geo-alt-fill"></i> SUNBEAM HINJAWADI PUNE</h2>
+        <p class="address">"Sunbeam IT Park", Second Floor, Phase 2 of Rajiv Gandhi Infotech Park, Hinjawadi,<br>
+           Pune - 411057, MH-INDIA.</p>
+        <div class="contact-info">
+          <p><i class="bi bi-telephone"></i> +91 82 82 82 9806</p>
+          <p><i class="bi bi-envelope"></i> scc@sunbeaminfo.in</p>
         </div>
       </div>
     </div>
-  </div>
-
+    </div>
+     </section>
   <!-- Footer -->
-  <div class="footer">
-    <div class="container">
-      <div class="row">
-        <!-- Market Yard Branch -->
-        <div class="col-md-6 mb-4">
-          <h5>CONTACT US</h5>
-          <p><strong><i class="bi bi-geo-alt-fill"></i> SUNBEAM MARKET YARD PUNE</strong></p>
-          <p>'Sunbeam Chambers', Plot No.R/2, Market Yard Road, Behind Hotel Fulora, Gultekdi, Pune - 411037, MH-INDIA.</p>
-          <p><i class="bi bi-telephone-fill"></i> +91 82 82 82 9806</p>
-          <p><i class="bi bi-envelope-fill"></i> <a href="mailto:scc@sunbeaminfo.in">scc@sunbeaminfo.in</a></p>
-          <a href="https://wa.me/918282829806" target="_blank"><i class="bi bi-whatsapp"></i> Chat with us</a>
-        </div>
-
-        <!-- Hinjawadi Branch -->
-        <div class="col-md-6 mb-4">
-          <h5 class="invisible">CONTACT US</h5>
-          <p><strong><i class="bi bi-geo-alt-fill"></i> SUNBEAM HINJAWADI PUNE</strong></p>
-          <p>"Sunbeam IT Park", 2nd Floor, Phase 2, Rajiv Gandhi Infotech Park, Hinjawadi, Pune - 411057, MH-INDIA</p>
-          <p><i class="bi bi-telephone-fill"></i> +91 82 82 82 9806</p>
-          <p><i class="bi bi-envelope-fill"></i> <a href="mailto:scc@sunbeaminfo.in">scc@sunbeaminfo.in</a></p>
-        </div>
-      </div>
+<div class="footer-bar">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap">
+    <div class="text-white small">
+      Sunbeam. © 2025. All Rights Reserved.
+    </div>
+    <div class="footer-links small">
+      <a href="https://mail.google.com/mail/u/0/?pli=1#inbox">Webmail</a> |
+      <a href="#">FAQs</a> |
+      <a href="#">Sitemap</a> |
+      <a href="#">Privacy</a>
+    </div>
+    <div class="text-white small">
+      Powered by <strong style="color: white;">authlinQ</strong>
     </div>
   </div>
+</div>
+            </body>
 
-  <!-- Website reference -->
-  <div class="website-ref">
-    Refer this website: <a href="https://sunbeaminfo.in/" target="_blank">https://sunbeaminfo.in/</a>
-  </div>
+            </html> 
 
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-</body>
-</html>
+     
+
+   
