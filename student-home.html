@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sunbeam Web Page</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .top-bar {
+      background-color: #004a7c;
+      color: white;
+      padding: 5px 20px;
+      font-size: 14px;
+      text-align: right;
+    }
+
+    .header {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      border-bottom: 2px solid #004a7c;
+    }
+ /* logo*/
+
+    .logo img {
+      height: 60px;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+     /* regester button*/
+    .register-btn {
+      padding: 6px 12px;
+      background-color: #007dc5;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+ /* icons */
+
+    .icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .icons i {
+      color: white;
+      background-color: #007dc5;
+      padding: 6px;
+      border-radius: 50%;
+    }
+
+    /* navbar */
+
+    .navbar {
+      background-color: #004a7c;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      position: relative;
+    }
+
+    .navbar a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* dropdown */
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f8f9fa;
+      min-width: 800px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 15px;
+      border-radius: 5px;
+      color: #333;
+    }
+
+    .dropdown-content.about {
+      min-width: 200px;
+    }
+
+    .dropdown-content.admissions {
+      min-width: 300px;
+    }
+    
+    .dropdown-content.login {
+      min-width: 200px;
+      left: auto;
+      right: 0;
+      transform: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-section {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    .dropdown-section.red-box {
+      background-color: hsl(288, 48%, 72%);
+      border-left: 4px solid #d436f4;
+    }
+
+    .dropdown-section.green-box {
+      background-color: #e8f5e9;
+      border-left: 4px solid #4caf50;
+    }
+
+    .dropdown-section.blue-box {
+      background-color: #e3f2fd;
+      border-left: 4px solid #2196f3;
+    }
+
+    .dropdown-section h4 {
+      color: #333;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .dropdown-section.red-box h4 {
+      color: #390e49;
+    }
+
+    .dropdown-section.green-box h4 {
+      color: #2e7d32;
+    }
+
+    .dropdown-section.blue-box h4 {
+      color: #0d47a1;
+    }
+
+    .dropdown-section ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .dropdown-section li {
+      margin-bottom: 5px;
+      padding: 3px 0;
+    }
+
+    .dropdown-section a {
+      color: #333;
+      text-decoration: none;
+      display: block;
+      padding: 2px 5px;
+    }
+
+    .dropdown-section a:hover {
+      background-color: rgba(0,0,0,0.05);
+    }
+
+    .banner {
+      background: linear-gradient(to bottom right, #fde6e6, #fad7e8);
+      padding: 40px 20px;
+      text-align: center;
+      border: 3px solid #900;
+    }
+
+    /* announcement bar */
+
+    .announcement-bar {
+      background-color: #1e5c70;
+      color: #fefefe;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+
+    .announcement-bar .label {
+      background-color: #154d5c;
+      color: #fffacd;
+      padding: 0 15px;
+    }
+
+    /* marquee*/
+
+    .marquee-text {
+      color: #fffacd;
+      padding-left: 20px;
+    }
+
+   /* cards */
+    .stats-wrapper {
+      background-color: #003366;
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .stats-card {
+      background-color: #00bfff;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      margin: 15px 0;
+    }
+
+    .courses-section {
+      background-color: #f0f0f0;
+      padding: 50px 0;
+    }
+
+    .course-card {
+      min-height: 250px;
+      text-align: center;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .course-orange { background-color: #f4621f; }
+    .course-blue { background-color: #003366; }
+    .course-red { background-color: #e63946; }
+
+    .btn-view {
+      background-color: white;
+      color: black;
+      font-weight: bold;
+      border: none;
+      margin-top: 10px;
+    }
+
+    
+       /* footer */
+
+    .footer {
+      background-color: #0d2842;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .website-ref {
+      background-color: #003366;
+      text-align: center;
+      padding: 15px;
+      color: white;
+    }
+
+    .icon-img {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    Pune | Karad: +91 82 82 82 9806
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">
+      <img src="https://sunbeaminfo.com/images/logo.png" alt="Sunbeam Logo" />
+    </div>
+    <div class="actions">
+      <a href="#" class="register-btn">📝 Registration & Online Admission</a>
+      <div class="icons">
+        <i class="bi bi-facebook"></i>
+        <i class="bi bi-twitter"></i>
+        <i class="bi bi-linkedin"></i>
+        <i class="bi bi-youtube"></i>
+        <i class="bi bi-instagram"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+
+  <!--  about us Navbar -->
+  <div class="navbar">
+    <div class="dropdown">
+      <a href="#">ABOUT US</a>
+      <div class="dropdown-content about">
+        <div class="dropdown-section blue-box">
+          <ul>
+            <li><a href="#">ABOUT SUNBEAM</a></li>
+            <li><a href="#">BRANCHES</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  <!-- courses Navbar -->
+    <div class="dropdown">
+      <a href="#">COURSES</a>
+      <div class="dropdown-content">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="dropdown-section red-box">
+              <h4>ENTRANCE PREPARATORY COURSES</h4>
+              <ul>
+                <li><a href="#">Pre-CAT</a></li>
+                <li><a href="#">Mastering MCQs</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-section green-box">
+              <h4>INTERNSHIP</h4>
+              <ul>
+                <li><a href="#">Web Programming with Node.js</a></li>
+                <li><a href="#">Machine Learning</a></li>
+                <li><a href="#">Core Java</a></li>
+                <li><a href="#">Python Web Development</a></li>
+                <li><a href="#">Asp.Net</a></li>
+                <li><a href="#">Generative AI</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dropdown-section green-box">
+              <h4>SUNBEAM CERTIFIED COURSES</h4>
+              <ul>
+                <li><a href="#">Core Java</a></li>
+                <li><a href="#">Data Structures and Algorithms</a></li>
+                <li><a href="#">Dev Ops</a></li>
+                <li><a href="#">Machine Learning</a></li>
+                <li><a href="#">Mastering GenAI</a></li>
+                <li><a href="#">MERN (FULL-STACK) DEVELOPMENT</a></li>
+                <li><a href="#">Python Development</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dropdown-section red-box">
+              <h4>CAMPUS PREPARATION COURSES</h4>
+              <ul>
+                <li><a href="#">Aptitude</a></li>
+                <li><a href="#">Mastering MCQs</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  admission Navbar -->
+    <a href="#">INTERNSHIP</a>
+    <div class="dropdown">
+      <a href="#">ADMISSIONS</a>
+      <div class="dropdown-content admissions">
+        <div class="dropdown-section blue-box">
+          <ul>
+            <li><a href="#">PROCEDURES</a></li>
+            <li><a href="#">RULES</a></li>
+            <li><a href="#">FAQS</a></li>
+            <li><a href="#">REGESTRATITION AND ONLINE ADMISSIONS</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="#">TESTIMONIALS</a>
+    <a href="#">INFRASTRUCTURE</a>
+    <a href="#">CONTACT US</a>
+    <div class="dropdown">
+
+      <!-- login Navbar -->
+
+      <a href="#">LOGIN</a>
+      <div class="dropdown-content login">
+        <div class="dropdown-section blue-box">
+          <ul>
+            <li><a href="login_form.html"><i class="bi bi-person-circle"></i> User Profile</a></li>
+            <li><a href="#"><i class="bi bi-key"></i> Change Password</a></li>
+            <li><a href="#"><i class="bi bi-list-check"></i> Show Enrollments</a></li>
+            <li><a href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Carousel -->
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="i1.png" class="d-block w-100" alt="Slide 1">
+      </div>
+      <div class="carousel-item">
+        <img src="i2.png" class="d-block w-100" alt="Slide 2">
+      </div>
+      <div class="carousel-item">
+        <img src="i3.png" class="d-block w-100" alt="Slide 3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="label"><i class="bi bi-megaphone-fill me-2"></i> ANNOUNCEMENTS</div>
+    <marquee behavior="scroll" direction="left" scrollamount="5" class="marquee-text">
+      <i class="bi bi-diamond-fill me-2"></i> PreCAT batches are open for Registration
+      &nbsp;&nbsp;<i class="bi bi-diamond-fill me-2"></i> SunBeam Certified Courses
+    </marquee>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-wrapper">
+    <div class="stats-card">
+      <h2>25+</h2>
+      <p>Years of Experience in Education</p>
+    </div>
+    <div class="stats-card">
+      <h2>50000+</h2>
+      <p>Students & Professionals trained</p>
+    </div>
+    <div class="stats-card">
+      <h2>120+</h2>
+      <p>Recruiters & Placements</p>
+    </div>
+  </div>
+
+  <!-- Courses -->
+  <div class="courses-section container text-center">
+    <h3 class="mb-5">COURSES</h3>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="course-card course-orange">
+          <img src="i3.png" class="icon-img" />
+          <div class="course-title">Entrance Preparatory Courses</div>
+          <div class="course-subtitle">Pre-CAT</div>
+          <button class="btn btn-view">VIEW MORE ⓘ</button>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="course-card course-blue">
+          <img src="i4.png" class="icon-img" />
+          <div class="course-title">SunBeam Certified Courses</div>
+          <div class="course-subtitle">Core Java</div>
+          <button class="btn btn-view">VIEW MORE ⓘ</button>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="course-card course-red">
+          <img src="i5.png" class="icon-img" />
+          <div class="course-title">Campus Preparation Courses</div>
+          <div class="course-subtitle">Mastering MCQs</div>
+          <button class="btn btn-view">VIEW MORE ⓘ</button>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="course-card course-blue">
+          <img src="i6.png" class="icon-img" />
+          <div class="course-title">Internship</div>
+          <div class="course-subtitle">Generative AI</div>
+          <button class="btn btn-view">VIEW MORE ⓘ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <!-- Market Yard Branch -->
+        <div class="col-md-6 mb-4">
+          <h5>CONTACT US</h5>
+          <p><strong><i class="bi bi-geo-alt-fill"></i> SUNBEAM MARKET YARD PUNE</strong></p>
+          <p>'Sunbeam Chambers', Plot No.R/2, Market Yard Road, Behind Hotel Fulora, Gultekdi, Pune - 411037, MH-INDIA.</p>
+          <p><i class="bi bi-telephone-fill"></i> +91 82 82 82 9806</p>
+          <p><i class="bi bi-envelope-fill"></i> <a href="mailto:scc@sunbeaminfo.in">scc@sunbeaminfo.in</a></p>
+          <a href="https://wa.me/918282829806" target="_blank"><i class="bi bi-whatsapp"></i> Chat with us</a>
+        </div>
+
+        <!-- Hinjawadi Branch -->
+        <div class="col-md-6 mb-4">
+          <h5 class="invisible">CONTACT US</h5>
+          <p><strong><i class="bi bi-geo-alt-fill"></i> SUNBEAM HINJAWADI PUNE</strong></p>
+          
+          <p>"Sunbeam IT Park", 2nd Floor, Phase 2, Rajiv Gandhi Infotech Park, Hinjawadi, Pune - 411057, MH-INDIA</p>
+          <p><i class="bi bi-telephone-fill"></i> +91 82 82 82 9806</p>
+          <p><i class="bi bi-envelope-fill"></i> <a href="mailto:scc@sunbeaminfo.in">scc@sunbeaminfo.in</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Website reference -->
+  <div class="website-ref">
+    Refer this website: <a href="https://sunbeaminfo.in/" target="_blank">https://sunbeaminfo.in/</a>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+</body>
+</html>
