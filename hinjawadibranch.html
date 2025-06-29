@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Hinjawadi</title>
+     <link rel="icon" href="new_logo.png">
+</head>
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+   /* Topbar */
+                     .topbar {
+                        background-color: #004080;
+                        color: white;
+                        font-size: 0.9rem;
+                        padding: 5px 20px;
+                    }
+
+                     /* Header */
+                      header {
+                        background-color: white;
+                        padding: 10px 20px;
+                    }
+
+                    header img {
+                        height: 60px;
+                    }
+                    .header-right .btnn{
+                        background-color: #004080;
+                        color: white;
+                        font-weight: bold;
+                        border: 2px solid skyblue;
+                        height: 38px;
+                        padding: 0 12px;
+                        display: flex;
+                        align-items: center;
+                        white-space: nowrap;
+                    }
+
+            .social-icon {
+                font-size: 1rem;
+                width: 38px;
+                height: 38px;
+                background-color: #007bff;
+                color: white;
+                border: 1px solid white;
+                text-align: center;
+                display: inline-flex;
+                align-items: center;
+                background-color: #007bff;
+                justify-content: center;
+            }
+                   
+                    .social-icon:hover {
+                        background-color: #0056b3;
+                    }
+
+       .navbar {
+      background-color: #004a7c;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      position: relative;
+    }
+
+    .navbar a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* dropdown */
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f8f9fa;
+      min-width: 800px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 15px;
+      border-radius: 5px;
+      color: #333;
+      margin-left: 100px;
+    }
+
+    .dropdown-content.about {
+      min-width: 200px;
+    }
+
+    .dropdown-content.admissions {
+      min-width: 300px;
+    }
+    
+    .dropdown-content.login {
+      min-width: 200px;
+      left: auto;
+      right: 0;
+      transform: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-section {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    .dropdown-section.red-box {
+      background-color: hsl(288, 48%, 72%);
+      border-left: 4px solid #d436f4;
+    }
+
+    .dropdown-section.green-box {
+      background-color: #e8f5e9;
+      border-left: 4px solid #4caf50;
+    }
+
+    .dropdown-section.blue-box {
+      background-color: #e3f2fd;
+      border-left: 4px solid #2196f3;
+    }
+
+    .dropdown-section h4 {
+      color: #333;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .dropdown-section.red-box h4 {
+      color: #390e49;
+    }
+
+    .dropdown-section.green-box h4 {
+      color: #2e7d32;
+    }
+
+    .dropdown-section.blue-box h4 {
+      color: #0d47a1;
+    }
+
+    .dropdown-section ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .dropdown-section li {
+      margin-bottom: 5px;
+      padding: 3px 0;
+    }
+
+    .dropdown-section a {
+      color: #333;
+      text-decoration: none;
+      display: block;
+      padding: 2px 5px;
+    }
+
+    .dropdown-section a:hover {
+      background-color: rgba(0,0,0,0.05);
+    }
+
+    .banner {
+      background: linear-gradient(to bottom right, #fde6e6, #fad7e8);
+      padding: 40px 20px;
+      text-align: center;
+      border: 3px solid #900;
+    }
+      .contact {
+                        background-color: black;
+                        padding: 20px;
+                        text-align: center;
+                        color: white;
+                    }
+                       a{
+        color: inherit;
+        text-decoration: none;
+    }
+      a:hover{
+        color:dodgerblue
+    }
+    .breadcrumb {
+      margin-top: 10px;
+      font-size: 16px;
+      display: inline-block;
+    }
+
+    .breadcrumb a {
+      color: #00bfff;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+    .breadcrumb span {
+      color: white;
+      margin: 0 5px;
+    }
+
+                    /* Main Text  */
+                    .main-container {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding: 10px;
+                    }
+
+                    .about-section {
+                        margin-top: 10px;
+                        padding-right: 20px;
+                        padding-left: 10px;
+                    }
+                    .about-text {
+                        margin-top: 20px;
+                        font-size: 16px;
+                        color:grey;
+                        text-align: justify;
+                        margin-left: 50px;
+                    }
+
+                    .dashed-line {
+                        border-top: 2px dashed #15090965;
+                        margin-bottom: 20px;
+                    
+                    }
+                    .card{
+                      width: 380px;
+                      padding: auto;
+                    }
+                    /* Sidebar */
+                     .card1 {
+      width: 350px;
+      height: 500px;
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 10px;
+    }
+    .card1::before {
+      content: "";
+      background-image: url(lab.jpg); 
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+     .card1::after {
+      content: "";
+      background-color: rgba(53, 96, 130, 0.5); 
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+    }
+
+    .card1-content {
+      position: relative;
+      text-align: center;
+      color: rgb(252, 215, 5);
+      padding-top: 100px;
+      z-index: 3;
+     
+    }
+    .btn{
+      border-radius: 20px;
+    }
+    .btn:hover{
+      background-color: rgb(50, 34, 79);
+
+    }
+
+                     
+                    /* accordion */
+     .accordion::after {
+                         /* border-left-color: #007bff; */
+  content: '+';
+  color: grey;
+  font-weight: bold;
+  font-size: 20px;
+
+  float: right;
+  margin-left: 5px;
+}
+
+.accordion.active::after {
+  content: '-';
+  background-color: #e9ecef;
+
+}
+
+                    /* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+
+  color: #444;
+  cursor: pointer;
+  border-left: 4px solid #004a7c;
+  padding: 18px;
+  width: 80%;
+ max-width: 830px;
+  background-color: #fff;
+ margin: auto;
+  border: 1px solid #ccc;
+  transition: 0.4s;
+  padding-bottom: 10px;
+    font-family: Arial, sans-serif;
+      justify-content: space-between;
+                        padding-left: 20px;
+                         margin-top: 5px;
+                        font-size: 16px;
+                        text-align: justify;
+                        margin-left: 50px;                 
+}
+
+.panel {
+   padding: 10px;
+  background-color: white;
+  text-align: justify;
+  display: none;
+ color: #444;
+  overflow: hidden;
+     border: 1px solid #ccc;
+       border: 1px solid #ccc;
+       border: 1px solid #ccc;
+       margin-left: 50px;
+       width: 80%;
+       margin-right: 100px;
+}
+ iframe {
+      border: 0;
+      width: 100%;
+      height: 300px;
+    }
+
+ .image-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+.image-row img {
+      width: 250px;
+      height: auto;
+    }
+
+    
+    .panel img {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 100%;
+      height: auto;
+    }
+  .PPP {
+    display: flex;
+      width: 250px;
+      padding-top: 10px;
+      height: 150px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+/* Table */
+tr:nth-child(even){background-color: #f2f2f2}
+    table {
+  border-collapse: collapse;
+ 
+  width: 100%;
+  border: 1px solid black;
+   margin-left: 30px;
+   margin-top: 20px; 
+}
+
+th {
+    background-color: #0056b3;
+  text-align: center;
+  padding: 8px;
+  border: 1px solid black;
+  color: white;
+}
+td {
+  text-align: center;
+  padding: 8px;
+  border:1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+                      /* Contact-section */
+                        .contact-section {
+                        background: #0f3b5c url('bg-pattern.png'); /* replace bg-pattern.png if you want */
+                        color: white;
+                        padding: 40px 20px;
+                        margin-top: 10px;
+
+                          top: 0;                      
+                          left: 0;                      
+                          /* width: 100vw;                 */
+                          background-size: cover;      
+                       
+                          
+                        
+                          /* overflow: auto;                */
+                                            }
+
+                    .contact-container {
+                        display: flex;
+                      flex-wrap: wrap;
+                      justify-content: space-around;
+                      max-width: 1200px;
+                      margin: 0 auto;
+                    }
+
+                    .contact-box {
+                      flex: 1 1 400px;
+                      margin: 20px;
+                    }
+
+                    .cont{
+                        padding-left: 25px;
+                    }
+                    .contact-box h2 {
+                      font-size: 22px;
+                      margin-bottom: 10px;
+                    }
+
+                    .contact-box p {
+                      font-size: 16px;
+                      margin: 5px 0;
+                    
+                    }
+
+                    .contact-box .icon {
+                      margin-right: 8px;
+                    }
+
+                    .contact-info {
+                      margin-top: 15px;
+                    }
+
+                    .contact-info p {
+                      display: flex;
+                      align-items: center;
+                      color: white;
+                    
+                    }
+                                    
+                    .contact-info p i {
+                      margin-right: 5px;
+                      color: white;
+                    }  
+  
+
+
+        .footer-bar {
+  background-color: #004476;
+  padding: 10px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+   top: 0;                      
+                          left: 0;                      
+                          /* width: 100vw;    */
+}
+
+.footer-bar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-bar a:hover {
+  text-decoration: underline;
+}
+
+</style>
+<body>
+
+
+    <!-- Top contact bar -->
+                <div class="topbar text-end">
+                    <i class="bi bi-telephone"></i> Pune | Karad: +91 82 82 82 9806
+                </div>
+
+            <!-- Header --> 
+                 <header class="d-flex justify-content-between align-items-center">
+                    <img src="new_logo.png" alt="Sunbeam Logo" />
+
+                     <div class="header-right d-flex align-items-center gap-2">
+                        <a href="registration_form.html">
+                          <button class="btnn" >
+                           <i class="bi bi-pencil-square"></i> Registration & Online Admission
+                        </button>
+                        </a>
+                        <a href="https://www.facebook.com/sunbeamgroup" class="social-icon" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="https://x.com/siitofficial" class="social-icon" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/sunbeam-institute-of-information-technology/" class="social-icon" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.youtube.com/channel/UCODzoBuQt0L8FtfzWhaMwoA" class="social-icon" target="_blank"><i class="bi bi-youtube"></i></a>
+                        <a href="https://www.instagram.com/siitofficial/" class="social-icon" target="_blank"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </header>
+
+                <!-- Navigation -->
+                <!--  about us Navbar -->
+  <div class="navbar">
+    <div class="dropdown">
+      <a href="#">ABOUT US</a>
+      <div class="dropdown-content about">
+        <div class="dropdown-section blue-box">
+          <ul>
+            <li><a href="P_About_us.html">ABOUT SUNBEAM</a></li>
+            <li><a href="infrastucture.html">BRANCHES</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ 
+
+  <!-- courses Navbar -->
+    <div class="dropdown">
+      <a href="#">COURSES</a>
+      <div class="dropdown-content">
+        <div class="row">
+
+          <div class="col-md-4">
+            <div class="dropdown-section red-box">
+              <h4>ENTRANCE PREPARATORY COURSES</h4>
+              <ul>
+                <li><a href="#">Pre-CAT</a></li>
+                <li><a href="#">Mastering MCQs</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown-section green-box">
+              <h4>INTERNSHIP</h4>
+              <ul>
+                <li><a href="#">Web Programming with Node.js</a></li>
+                <li><a href="#">Machine Learning</a></li>
+                <li><a href="#">Core Java</a></li>
+                <li><a href="#">Python Web Development</a></li>
+                <li><a href="#">Asp.Net</a></li>
+                <li><a href="#">Generative AI</a></li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="col-md-4">
+            <div class="dropdown-section green-box">
+              <h4>SUNBEAM CERTIFIED COURSES</h4>
+              <ul>
+                <li><a href="#">Core Java</a></li>
+                <li><a href="#">Data Structures and Algorithms</a></li>
+                <li><a href="#">Dev Ops</a></li>
+                <li><a href="#">Machine Learning</a></li>
+                <li><a href="#">Mastering GenAI</a></li>
+                <li><a href="#">MERN (FULL-STACK) DEVELOPMENT</a></li>
+                <li><a href="#">Python Development</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dropdown-section red-box">
+              <h4>CAMPUS PREPARATION COURSES</h4>
+              <ul>
+                <li><a href="#">Aptitude</a></li>
+                <li><a href="#">Mastering MCQs</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!--  admission Navbar -->
+    <a href="P_Internship.html">INTERNSHIP</a>
+    <div class="dropdown">
+      <a href="#">ADMISSIONS</a>
+      <div class="dropdown-content admissions">
+        <div class="dropdown-section blue-box">
+          <ul>
+           <li><a href="Procedures.html">PROCEDURES</a></li>
+            <li><a href="admission_Rules.html">RULES</a></li>
+            <li><a href="#">FAQS</a></li>
+            <li><a href="course_schedule.html">REGESTRATITION AND ONLINE ADMISSIONS</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <a href="testimonials.html">TESTIMONIALS</a>
+    <a href="infrastucture.html">INFRASTRUCTURE</a>
+    <a href="P_contact.html">CONTACT US</a>
+   </div>
+   <!-- Banner -->
+  <div class="contact">
+                    <h4>ABOUT US</h4>
+                    <p><a href="P_Homepage.html"> Home</a> &gt;
+                      <a href="P_About_us.html"> About Us</a> &gt;
+                      <a href="infrastucture.html"> Home</a> &gt;
+                      <a href="#"> Branch Details Pune - Hinjawadi</a></p>
+                </div>
+
+
+
+
+
+
+
+                  <!-- <body> -->
+                    <div class="main-container">
+                        <div class="about-section">
+                              <h5>SUNBEAM INSTITUTE OF INFORMATION TECHNOLOGY, PUNE - HINJAWADI</h5>
+                            <hr class="dashed-line">
+                              <h5>Overview :</h5>
+                            <div class="about-content">
+                         <div class="d-flex gap-3">
+        <img src="s-1.jpg" alt="Campus" style="height: 120px; width: auto; border: 2px solid skyblue;" />
+        <img src="s-2.jpg" alt="Hallway" style="height: 120px; width: auto; border: 2px solid skyblue;" />
+        <img src="s-3.jpg" alt="Classroom" style="height: 120px; width: auto; border: 2px solid skyblue;" />
+        
+      </div>
+     
+                <p class="about-text">
+                  The Sunbeam campus at Rajiv Gandhi Infotech Park, Hinjawadi is spread over an area of 1 Acre 
+        which includes 70,000 sq feet of built-up area and 5-floor building for C-DAC courses.<br><br>
+        The teaching-learning process is facilitated in 3 lecture halls, 5 computer labs with high-speed Internet connectivity,
+        a seminar room, conference room, library. The entire sunbeam campus is Wi-Fi enabled. Sunbeam also provides hostel facility to girls.
+        The construction of a Hinjewadi branch has been completed and the AUG 2019 batches have started in a new building.
+      </p>
+                </p>
+           
+<!--    accordion   -->
+    <button class="accordion">Location</button>
+<div class="panel">
+  <div class="d-flex gap-3">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.8666665360124!2d73.86446757415142!3d18.489697770118664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c01f3787714f%3A0x82eaed4cfca0afde!2sSunbeam!5e0!3m2!1sen!2sin!4v1750324499541!5m2!1sen!2sin" 
+   width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  
+      </div>
+</div>
+<button class="accordion">Gallary</button>
+<div class="panel">
+  <div class="d-flex gap-3">
+        <img src="s-1.jpg" alt="Campus" style="height: 80px; width: auto; border: 2px solid skyblue;" />
+        <img src="s-2.jpg" alt="Hallway" style="height: 80px; width: auto; border: 2px solid skyblue;" />
+        <img src="s-3.jpg" alt="Classroom" style="height: 80px; width: auto; border: 2px solid skyblue;" />  
+      </div>
+</div>
+
+  </div>  
+        </div>
+      <div class="col-md-4 d-flex flex-column align-items-start">
+<div class="card " style="border-radius: 10px; padding-top: 0;">
+        <div class="card-header text-white" style="background-color: #140a9c; border-radius: 10px 10px 0 0;">
+          BRANCHES
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <a href="#" class="text-dark text-decoration-none">Pune - Market Yard</a>
+          </li>
+          <li class="list-group-item">
+            <a href="hinjawadibranch.html" class="text-dark text-decoration-none">Pune - Hinjawadi</a>
+          </li>
+        </ul>
+      </div>
+
+      <br>
+
+  
+
+<!-- Registration Card -->
+  <div class="card1 ">
+    <div class="card1-content d-flex flex-column justify-content-center align-items-center">
+      <h2><b>Courses</b></h2>
+       <a href="course_schedule.html">
+                          <button type="button" class="btn btn-light" style="color:rgb(13, 203, 236);">View Course Schedule</button>
+                        </a>
+    </div>
+  </div>
+       </div>          
+ 
+</div>
+
+
+
+
+
+<!-- Last Contact-section -->
+              <section class="contact-section">
+
+<div class="contact-container">
+        <div class="row"><h1 class="cont">Contact Us</h1>
+ <div class="contact-box">
+        <h2><i class="bi bi-geo-alt-fill"></i> SUNBEAM MARKET YARD PUNE</h2>
+        <p class="address">'Sunbeam Chambers', Plot No.R/2, Market Yard Road, Behind Hotel Fulora, Gultekdi,<br>
+           Pune - 411 037. MH-INDIA.</p>
+        <div class="contact-info">
+          <p><i class="bi bi-telephone"></i>+91 82 82 82 9806</p>
+          <p><i class="bi bi-envelope"></i> scc@sunbeaminfo.in</p>
+        </div>
+      </div>
+
+        <div class="contact-box">
+        <h2><i class="bi bi-geo-alt-fill"></i> SUNBEAM HINJAWADI PUNE</h2>
+        <p class="address">"Sunbeam IT Park", Second Floor, Phase 2 of Rajiv Gandhi Infotech Park, Hinjawadi,<br>
+           Pune - 411057, MH-INDIA.</p>
+        <div class="contact-info">
+          <p><i class="bi bi-telephone"></i> +91 82 82 82 9806</p>
+          <p><i class="bi bi-envelope"></i> scc@sunbeaminfo.in</p>
+        </div>
+      </div>
+    </div>
+    </div>
+ </section>
+
+
+
+  <!-- Footer -->
+<div class="footer-bar">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap">
+    <div class="text-white small">
+      Sunbeam. © 2025. All Rights Reserved.
+    </div>
+    <div class="footer-links small">
+      <a href="https://mail.google.com/mail/u/0/?pli=1#inbox">Webmail</a> |
+      <a href="#">FAQs</a> |
+      <a href="#">Sitemap</a> |
+      <a href="#">Privacy</a>
+    </div>
+    <div class="text-white small">
+      Powered by <strong style="color: white;">authlinQ</strong>
+    </div>
+  </div>
+</div>
+
+  
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
+
+    <script src="accordation.js"></script>
+</body>
+</html>
