@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Registration Form</title>
+
+  <!-- Bootstrap CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    label {
+      font-weight: 600;
+      color: #1a6ecc;
+    }
+    .form-section {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 950px;
+      margin: 40px auto;
+    }
+    .note {
+      font-size: 0.9rem;
+      color: gray;
+    }
+    .btn-register {
+      background-color: #d9534f;
+      color: white;
+      font-weight: bold;
+      padding: 10px 30px;
+      border-radius: 20px;
+      border: none;
+    }
+    .btn-register:hover {
+      background-color: #c9302c;
+    }
+    a {
+      text-decoration: none;
+    }
+    .form-header {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .form-header i {
+      font-size: 3rem;
+      color: #1a6ecc;
+    }
+    .form-header h2 {
+      margin-top: 10px;
+      font-weight: 500;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top Heading with Icon -->
+<div class="form-header">
+  <i class="bi bi-person-lines-fill"></i><br/>
+  <h2>Student Registration Form</h2>
+</div>
+
+<!-- Main Form Section -->
+<div class="form-section">
+  <form id="registrationForm" novalidate>
+    <!-- Student Name -->
+    <div class="row mb-3">
+      <label class="col-sm-3 col-form-label">Student's Name:</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+        <div class="invalid-feedback">Please enter first name</div>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="middleName" placeholder="Father's/Middle Name" required>
+        <div class="invalid-feedback">Please enter middle name</div>
+      </div>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+        <div class="invalid-feedback">Please enter last name</div>
+      </div>
+    </div>
+
+    <!-- Certificate Name -->
+    <div class="mb-3">
+      <label class="form-label">Enter Your Name on Certificate:</label>
+      <input type="text" class="form-control" id="certName" placeholder="As per 10th/Degree Certificate" required>
+      <div class="invalid-feedback">Please enter certificate name</div>
+      <div class="note">[Note: This name will be printed on your certificate]</div>
+    </div>
+
+    <!-- Gender and DOB -->
+    <div class="row mb-3">
+      <div class="col-sm-6">
+        <label class="form-label">Gender:</label>
+        <div class="mt-2">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked>
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <label class="form-label">Date of Birth:</label>
+        <input type="date" class="form-control" id="dob" required>
+        <div class="invalid-feedback">Please select date of birth</div>
+      </div>
+    </div>
+
+    <!-- Permanent Address -->
+    <div class="mb-3">
+      <label class="form-label">Permanent Address:</label>
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="state" placeholder="State" required>
+          <div class="invalid-feedback">Please enter state</div>
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="city" placeholder="City" required>
+          <div class="invalid-feedback">Please enter city</div>
+        </div>
+      </div>
+      <div class="mb-2">
+        <input type="text" class="form-control" id="address" placeholder="Complete address" required>
+        <div class="invalid-feedback">Please enter complete address</div>
+        <div class="note">[Include flat/sector, house/apartment name, area, landmark]</div>
+      </div>
+      <div class="mb-2 col-md-6">
+        <input type="text" class="form-control" id="pincode" placeholder="Pincode" required>
+        <div class="invalid-feedback">Please enter pincode</div>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      <label class="form-label">Primary Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="example@example.com" required>
+      <div class="invalid-feedback">Please enter a valid email</div>
+    </div>
+
+    <!-- Contact No. -->
+    <div class="mb-3">
+      <label class="form-label">Contact No:</label>
+      <div class="row mb-2">
+        <div class="col-md-2">
+          <input type="text" class="form-control" id="country" placeholder="91" value="91" required>
+        </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control" id="std" placeholder="STD" required>
+          <div class="invalid-feedback">Please enter STD code</div>
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="phone" placeholder="Phone" required>
+          <div class="invalid-feedback">Please enter phone number</div>
+        </div>
+      </div>
+      <div class="mb-2 col-md-6">
+        <input type="text" class="form-control" id="mobile" placeholder="Mobile (WhatsApp preferred)" required>
+        <div class="invalid-feedback">Please enter mobile number</div>
+      </div>
+    </div>
+
+    <!-- College Information -->
+    <div class="mb-3">
+      <label class="form-label">College Name:</label>
+      <input type="text" class="form-control" id="collegeName" required>
+      <div class="invalid-feedback">Please enter college name</div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label class="form-label">Academic Year:</label>
+        <select class="form-control" id="academicYear" required>
+          <option value="">Select Year</option>
+          <option value="2023-2024">2023-2024</option>
+          <option value="2024-2025">2024-2025</option>
+        </select>
+        <div class="invalid-feedback">Please select academic year</div>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Batch ID:</label>
+        <input type="number" class="form-control" id="batchId" min="1" required>
+        <div class="invalid-feedback">Please enter valid batch ID</div>
+      </div>
+    </div>
+
+    <!-- Laptop Question -->
+    <div class="mb-3">
+      <label class="form-label">Do you have a LAPTOP?</label>
+      <div class="mt-2">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="laptop" id="laptopYes" value="yes" checked>
+          <label class="form-check-label" for="laptopYes">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="laptop" id="laptopNo" value="no">
+          <label class="form-check-label" for="laptopNo">No</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agreement Checkbox -->
+    <div class="mb-3 form-check">
+      <input class="form-check-input" type="checkbox" id="agree" required>
+      <label class="form-check-label" for="agree">
+        I agree to the SunBeam <a href="#" target="_blank">Rules and Regulations</a>
+      </label>
+      <div class="invalid-feedback">You must agree to continue</div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-center">
+      <button type="submit" class="btn btn-register">
+        <span class="submit-text">REGISTER &gt;&gt;</span>
+        <span class="spinner-border spinner-border-sm d-none" id="spinner"></span>
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="./scripts/userService.js"></script>
+
+
+
+<script>
+document.getElementById("registrationForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
+  
+  // Show loading state
+  const submitBtn = event.target.querySelector('button[type="submit"]');
+  const submitText = submitBtn.querySelector('.submit-text');
+  const spinner = submitBtn.querySelector('#spinner');
+  
+  submitBtn.disabled = true;
+  submitText.textContent = 'Processing...';
+  spinner.classList.remove('d-none');
+
+  try {
+    // Validate form - with null checks
+    if (!validateForm()) {
+      throw new Error("Please fill all required fields correctly");
+    }
+
+    // Prepare data with null checks
+    const formData = {
+      firstName: getValue('firstName'),
+      middleName: getValue('middleName'),
+      lastName: getValue('lastName'),
+      certName: getValue('certName'),
+      email: getValue('email'),
+      gender: getRadioValue('gender'),
+      dateOfBirth: getValue('dob'),
+      mobileNo: getValue('mobile'),
+      city: getValue('city'),
+      permanentAddress: getValue('address'),
+      pincode: getValue('pincode'),
+      state: getValue('state'),
+      collegeName: getValue('collegeName'),
+      academicYear: getValue('academicYear'),
+      isLaptopAvailable: getRadioValue('laptop') === "yes" ? 1 : 0,
+      batchId: parseInt(getValue('batchId')) || 0
+    };
+
+    // Validate batchId
+    if (formData.batchId <= 0) {
+      throw new Error("Please enter a valid batch ID");
+    }
+
+    // Make request
+    const response = await fetch('http://localhost:4000/user/register-and-enroll', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token') || ''}`
+      },
+      body: JSON.stringify(formData)
+    });
+
+    // Handle response
+    const result = await response.json();
+    
+    if (!response.ok) {
+      throw new Error(result.message || 'Registration failed');
+    }
+
+    // Success
+    alert(`Registration successful! Student ID: ${result.studentId || ''}`);
+    document.getElementById("registrationForm").reset();
+    
+    // Optional redirect
+    setTimeout(() => {
+      window.location.href = "students.html";
+    }, 1500);
+
+  } catch (error) {
+    console.error('Registration error:', error);
+    alert(`Error: ${error.message}`);
+  } finally {
+    submitBtn.disabled = false;
+    submitText.textContent = 'REGISTER >>';
+    spinner.classList.add('d-none');
+  }
+});
+
+// Helper function to safely get input values
+function getValue(id) {
+  const element = document.getElementById(id);
+  return element ? element.value.trim() : '';
+}
+
+// Helper function to get radio button values
+function getRadioValue(name) {
+  const selected = document.querySelector(`input[name="${name}"]:checked`);
+  return selected ? selected.value : '';
+}
+
+// Form validation with null checks
+function validateForm() {
+  const form = document.getElementById('registrationForm');
+  const requiredFields = form.querySelectorAll('[required]');
+  let isValid = true;
+
+  requiredFields.forEach(field => {
+    field.classList.remove('is-invalid');
+    if (!field.value.trim()) {
+      field.classList.add('is-invalid');
+      isValid = false;
+      console.log(`Missing required field: ${field.id}`);
+    }
+  });
+
+  // Additional validations
+  const email = document.getElementById('email');
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+    email.classList.add('is-invalid');
+    isValid = false;
+  }
+
+  return isValid;
+}
+
+
+</script>
+</body>
+</html>
