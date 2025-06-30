@@ -56,7 +56,7 @@ function redirectUser(role) {
       break;
     case "user":
     case "student":
-      window.location.href = "display-users.html";
+      window.location.href = "P_Homepage(user).html";
       break;
     default:
        notyf.error("Unknown role. Cannot redirect.");

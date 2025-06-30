@@ -2,7 +2,7 @@ const { SECRET_KEY } = require("../config");
 const jwt = require("jsonwebtoken");
 
 const authUsers = (request, response, next) => {
-  if (request.url === "/user/login" || request.url === "/user/register") {
+  if (request.url === "/user/login" || request.url === "/register-and-enroll") {
     // skipping authentication
     return next();
   }

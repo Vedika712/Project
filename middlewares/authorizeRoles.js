@@ -7,7 +7,7 @@ const { SECRET_KEY } = require("../config");
 // ["admin"]
 const authorizeRole = (allowedRoles) => {
   return (req, res, next) => {
-    const token = req.headers.token;
+    const token = request.headers.token;
     console.log("Token: ", token);
 
     if (!token) {

@@ -15,108 +15,45 @@ const createSuccessResponse = (message, data ={} ) => {
   data };
 }
 
-// Register a user
-router.post("/user/register", async (request, response) => {
-  const { email, password, role } = request.body;
-
-  if (!email || !password) {
-    return response.status(400).json(createErrorResponse("All fields are required"));
-  }else{
-    const hashPassword = String(crypto.SHA256(password));
-  
-
-  console.log("Password: ", password);
-    console.log("hashPassword: ", hashPassword);
-
-    // Insert user into the database
-    pool.query(
-      "INSERT INTO users ( email, password,role) VALUES (?, ?, ?)",
-      [ email, hashPassword,role],
-      (error, results) => {
-        if (error) {
-          // console.error(error);
-          if (error.code === "ER_DUP_ENTRY") {
-            return response
-              .status(400)
-              .send({ message: "Email already exists" });
-          }
-
-          return response.status(500).send({ message: "Server Error" });
-        } else {
-          response
-            .status(201)
-            .send({ message: "User registered successfully" });
-        }
-      }
-    );
-  }
-});
-
-
-//   try {
-//     const hashedPassword = await bcrypt.hash(password, 10);
-    
-//     const [results] = await pool.promise().execute(
-//       "INSERT INTO users (email, password, role) VALUES (?, ?, ?)",
-//       [email, hashedPassword, role]
-//     );
-
-//     response.status(201).json(createSuccessResponse("User registered successfully"));
-//   } catch (error) {
-//     if (error.code === "ER_DUP_ENTRY") {
-//       return response.status(400).json(createErrorResponse("Email already exists"));
-//     }
-//     console.error("Registration error:", error);
-//     response.status(500).json(createErrorResponse("Server Error"));
-//   }
-// });
-
-// User login
-// router.post("/user/login", async (request, response) => {
-//   console.log("LOGIN ATTEMPT:", request.body);
-
-//   const { email, password } = request.body;
+// // Register a user
+// router.post("/user/register", async (request, response) => {
+//   const { email, password, role } = request.body;
 
 //   if (!email || !password) {
 //     return response.status(400).json(createErrorResponse("All fields are required"));
-//   }
+//   }else{
+//     const hashPassword = String(crypto.SHA256(password));
+  
 
-//   try {
-//     const [users] = await pool.promise().execute(
-//       "SELECT user_id,email, password,role FROM users WHERE email = ?",
-//       [email]
+//   console.log("Password: ", password);
+//     console.log("hashPassword: ", hashPassword);
+
+//     // Insert user into the database
+//     pool.query(
+//       "INSERT INTO users ( email, password,role) VALUES (?, ?, ?)",
+//       [ email, hashPassword,role],
+//       (error, results) => {
+//         if (error) {
+//           // console.error(error);
+//           if (error.code === "ER_DUP_ENTRY") {
+//             return response
+//               .status(400)
+//               .send({ message: "Email already exists" });
+//           }
+
+//           return response.status(500).send({ message: "Server Error" });
+//         } else {
+//           response
+//             .status(201)
+//             .send({ message: "User registered successfully" });
+//         }
+//       }
 //     );
-
-//     if (users.length === 0) {
-//       return response.status(401).json(createErrorResponse("Invalid email or password"));
-//     }
-
-//     const user = users[0];
-//     const isPasswordValid = await bcrypt.compare(password, user.password);
-
-//     if (!isPasswordValid) {
-//       return response.status(401).json(createErrorResponse("Invalid email or password"));
-//     }
-
-//     const token = jwt.sign(
-//       {
-//         id:user.user_id,
-//         email: email,
-//         role:user.role,
-        
-//       },
-//       SECRET_KEY,
-//       { expiresIn: '1h' }
-//     );
-//     console.log("User found:", user);
-//     console.log("Generated token:", token);
-
-//     response.json(createSuccessResponse("Login successful", { token }));
-//   } catch (error) {
-//     console.error("Login error:", error);
-//     response.status(500).json(createErrorResponse("Server Error"));
 //   }
 // });
+
+
+
 
 router.post("/user/login", (request, response) => {
   const { email, password } = request.body;
